@@ -1,2 +1,3 @@
 # hawk.types
-Common Hawk types for all projects
+
+Types for Hawk's modules
