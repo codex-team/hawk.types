@@ -13,7 +13,7 @@ export * from "./src/dbScheme/workspace";
 export * from "./src/notifications/createProjectNotifications";
 export * from "./src/notifications/updateProjectNotifications";
 
-export * from "./src/type/userNotification";
+export * from "./src/notifications/userNotification";
 
-export * from "./src/receiveTypes";
-export * from "./src/tokensPair";
+export * from "./src/notifications/receiveTypes";
+export * from "./src/auth/tokensPair";
