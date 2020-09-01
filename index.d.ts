@@ -10,8 +10,8 @@ export * from "./src/dbScheme/user";
 export * from "./src/dbScheme/userNotifications";
 export * from "./src/dbScheme/workspace";
 
-export * from "./src/payload/rule/createProjectNotifications";
-export * from "./src/payload/rule/updateProjectNotifications";
+export * from "./src/notifications/createProjectNotifications";
+export * from "./src/notifications/updateProjectNotifications";
 
 export * from "./src/type/userNotification";
 

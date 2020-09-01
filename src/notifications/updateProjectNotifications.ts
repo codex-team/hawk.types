@@ -1,5 +1,5 @@
-import {ReceiveTypes} from "../../../index";
-import {NotificationsChannelsDBScheme} from "../../dbScheme/notificationsChannels";
+import {ReceiveTypes} from "../../index";
+import {NotificationsChannelsDBScheme} from "../dbScheme/notificationsChannels";
 
 /**
  * Payload for updating existing notifications rule
