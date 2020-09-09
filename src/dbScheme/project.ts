@@ -1,5 +1,5 @@
-import {ObjectId} from "mongodb";
-import {ProjectNotificationsRuleDBScheme} from "../../index";
+import { ObjectId } from "mongodb";
+import { ProjectNotificationsRuleDBScheme } from "../../index";
 
 /**
  * Structure represents a Project in DataBase

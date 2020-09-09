@@ -1,4 +1,4 @@
-import {NotificationsChannelSettingsDBScheme} from "../../index";
+import { NotificationsChannelSettingsDBScheme } from "../../index";
 
 /**
  * Available channels

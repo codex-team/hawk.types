@@ -1,5 +1,5 @@
-import {ObjectId} from "mongodb";
-import {UserNotificationsDBScheme} from "../../index";
+import { ObjectId } from "mongodb";
+import { UserNotificationsDBScheme } from "../../index";
 
 /**
  * Interface representing how user is stored in DB

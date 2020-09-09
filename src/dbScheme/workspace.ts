@@ -33,4 +33,14 @@ export interface WorkspaceDBScheme {
      * Id of the Workspace's plan
      */
     tariffPlanId: ObjectId;
+
+    /**
+     * Workspace balance
+     */
+    balance: number;
+
+    /**
+     * Date when workspace was charged last time
+     */
+    lastChargeDate: Date;
 }
