@@ -1,4 +1,4 @@
-import {NotificationsChannelsDBScheme, UserNotificationType} from "../../index";
+import { NotificationsChannelsDBScheme, UserNotificationType } from "../../index";
 
 /**
  * This structure represents how user notifications are stored at the DB (in 'users' collection)
