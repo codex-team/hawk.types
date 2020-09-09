@@ -32,5 +32,5 @@ export interface WorkspaceDBScheme {
     /**
      * Id of the Workspace's plan
      */
-    planId: string;
+    tariffPlanId: ObjectId;
 }
