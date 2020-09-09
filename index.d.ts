@@ -6,9 +6,6 @@ export * from "./src/base/event/backtraceFrame";
 export * from "./src/base/event/event";
 export * from "./src/base/event/sourceCodeLine";
 
-export * from "./src/base/worker/eventWorkerTask";
-export * from "./src/base/worker/workerTask";
-
 export * from "./src/dbScheme/businessOperation";
 export * from "./src/dbScheme/confirmedMember";
 export * from "./src/dbScheme/membership";
