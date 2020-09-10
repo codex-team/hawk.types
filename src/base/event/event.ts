@@ -1,5 +1,5 @@
-import { UserDBScheme } from "../../dbScheme/user";
 import { BacktraceFrame } from "./backtraceFrame";
+import { AffectedUser } from "./affectedUser";
 
 /**
  * Information about event
@@ -55,7 +55,7 @@ export interface EventData {
     /**
      * Current authenticated user
      */
-    user?: UserDBScheme;
+    user?: AffectedUser;
 
     /**
      * Any other information collected and passed by user
