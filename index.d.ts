@@ -15,6 +15,7 @@ export * from "./src/dbScheme/pendingMember";
 export * from "./src/dbScheme/plan";
 export * from "./src/dbScheme/project";
 export * from "./src/dbScheme/projectNotificationsRule";
+export * from "./src/dbScheme/repetition";
 export * from "./src/dbScheme/user";
 export * from "./src/dbScheme/userNotifications";
 export * from "./src/dbScheme/workspace";
