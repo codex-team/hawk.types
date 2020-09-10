@@ -2,7 +2,7 @@ import { ObjectId } from "mongodb";
 import { EventData } from "../base/event/event";
 import { UserDBScheme } from "./user";
 
-export interface GroupedEvent {
+export interface GroupedEventDBScheme {
     /**
      * Internal mongo id
      */
