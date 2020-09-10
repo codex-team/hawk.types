@@ -1,4 +1,5 @@
 import { UserDBScheme } from "../../dbScheme/user";
+import { BacktraceFrame } from "./backtraceFrame";
 
 /**
  * Information about event

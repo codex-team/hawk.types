@@ -1,7 +1,7 @@
 import { ObjectId } from "mongodb";
 import { EventData } from "../base/event/event";
 
-export interface Repetition {
+export interface RepetitionDBScheme {
     /**
      * Internal mongo id
      */
