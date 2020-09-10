@@ -8,6 +8,7 @@ export * from "./src/base/event/sourceCodeLine";
 
 export * from "./src/dbScheme/businessOperation";
 export * from "./src/dbScheme/confirmedMember";
+export * from "./src/dbScheme/groupedEvent";
 export * from "./src/dbScheme/membership";
 export * from "./src/dbScheme/notificationsChannels";
 export * from "./src/dbScheme/notificationsChannelSettings";
