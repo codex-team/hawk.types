@@ -2,8 +2,8 @@
   "name": "hawk.types",
   "version": "0.0.1",
   "description": "TypeScript definitions for Hawk",
-  "types": "index",
-  "main": "",
+  "types": "index.ts",
+  "main": "index.ts",
   "repository": "https://github.com/codex-team/hawk.types.git",
   "license": "MIT",
   "scripts": {
