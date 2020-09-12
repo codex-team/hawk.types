@@ -2,11 +2,21 @@
   "name": "hawk.types",
   "version": "0.0.1",
   "description": "TypeScript definitions for Hawk",
-  "types": "index",
-  "main": "",
+  "types": "build/index.d.ts",
+  "main": "build/index.js",
   "repository": "https://github.com/codex-team/hawk.types.git",
   "license": "MIT",
+  "scripts": {
+    "lint": "eslint src/ --ext .ts --fix"
+  },
   "dependencies": {
     "@types/mongodb": "^3.5.26"
+  },
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^4.1.0",
+    "@typescript-eslint/parser": "^4.1.0",
+    "eslint": "^7.8.1",
+    "eslint-config-codex": "^1.3.6",
+    "typescript": "^4.0.2"
   }
 }

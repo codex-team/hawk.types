@@ -1,35 +1,34 @@
+import { ObjectId } from "mongodb";
 import { ReceiveTypes } from "../../index";
-import { NotificationsChannelsDBScheme } from "../dbScheme/notificationsChannels";
-
+import { NotificationsChannelsDBScheme } from "./notificationsChannels";
 /**
- * Payload for updating existing notifications rule
+ * This structure represents a single rule of notifications settings
  */
-export interface UpdateProjectNotificationsRulePayload {
+export interface ProjectNotificationsRuleDBScheme {
     /**
-     * Rule id to update
+     * Id of Rule
      */
-    ruleId: string;
-
+    _id: ObjectId;
     /**
      * Allows to disable rule without removing
      */
-    isEnabled: true;
-
+    isEnabled: boolean;
+    /**
+     * Creator of the rule
+     */
+    uidAdded: ObjectId;
     /**
      * Receive type: 'ALL'  or 'ONLY_NEW'
      */
     whatToReceive: ReceiveTypes;
-
     /**
      * Only those which contains passed words
      */
     including: string[];
-
     /**
      * Skip those which contains passed words
      */
     excluding: string[];
-
     /**
      * Available channels to receive
      */

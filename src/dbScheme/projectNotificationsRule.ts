@@ -1,6 +1,6 @@
-import {ObjectId} from "mongodb";
-import {ReceiveTypes} from "../../index";
-import {NotificationsChannelsDBScheme} from "./notificationsChannels";
+import { ObjectId } from "mongodb";
+import { ReceiveTypes } from "../../index";
+import { NotificationsChannelsDBScheme } from "./notificationsChannels";
 
 /**
  * This structure represents a single rule of notifications settings
