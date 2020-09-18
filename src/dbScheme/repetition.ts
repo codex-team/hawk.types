@@ -1,5 +1,5 @@
 import { ObjectId } from "mongodb";
-import { EventData } from "../base/event/event";
+import {DecodedEventData, EncodedEventData, EventData} from "../base/event/event";
 
 export interface RepetitionDBScheme {
     /**
@@ -17,4 +17,18 @@ export interface RepetitionDBScheme {
      * except fields that used in groupHash
      */
     payload: EventData;
+}
+
+/**
+ * Repetition with decoded event data
+ */
+export interface DecodedRepetition {
+    payload: DecodedEventData
+}
+
+/**
+ * Repetition with decoded event data
+ */
+export interface EncodedRepetition {
+    payload: EncodedEventData
 }

@@ -2,6 +2,16 @@ import { BacktraceFrame } from "./backtraceFrame";
 import { AffectedUser } from "./affectedUser";
 
 /**
+ * Represents simple JSON-like document
+ */
+type Dict = {[key: string]: DictNode};
+
+/**
+ * Represents possible field values in Dict
+ */
+type DictNode = string | number | boolean | Dict;
+
+/**
  * Information about event
  * That object will be send as 'payload' to the Collector
  */
@@ -45,7 +55,7 @@ export interface EventData {
      * Catcher-specific information
      */
     // eslint-disable-next-line
-    addons?: {[key: string]: string|object};
+    addons?: Dict | string;
 
     /**
      * Current release (aka version, revision) of an application
@@ -61,6 +71,36 @@ export interface EventData {
      * Any other information collected and passed by user
      */
     // eslint-disable-next-line
-    context?: object;
+    context?: Dict | string;
 }
 
+/**
+ * Event data with decoded unsafe fields
+ */
+export interface DecodedEventData extends EventData {
+    /**
+     * Decoded context
+     */
+    context?: Dict;
+
+    /**
+     * Decoded addons
+     */
+    addons?: Dict;
+}
+
+/**
+ * Event data with encoded unsafe fields
+ *
+ */
+export interface EncodedEventData extends EventData {
+    /**
+     * Encoded context
+     */
+    context?: string;
+
+    /**
+     * Encoded addons
+     */
+    addons?: string;
+}
