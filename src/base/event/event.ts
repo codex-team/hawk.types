@@ -54,7 +54,6 @@ export interface EventData {
     /**
      * Catcher-specific information
      */
-    // eslint-disable-next-line
     addons?: Dict | string;
 
     /**
@@ -70,7 +69,6 @@ export interface EventData {
     /**
      * Any other information collected and passed by user
      */
-    // eslint-disable-next-line
     context?: Dict | string;
 }
 

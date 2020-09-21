@@ -1,5 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.ReceiveTypes = void 0;
 /**
  * Available options of 'What to receive'
  */
