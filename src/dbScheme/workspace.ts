@@ -43,4 +43,9 @@ export interface WorkspaceDBScheme {
      * Date when workspace was charged last time
      */
     lastChargeDate: Date;
+
+    /**
+     * Total number of errors since the last charge date
+     */
+    billingPeriodEventsCount: number;
 }
