@@ -1,5 +1,5 @@
 import { ObjectId } from "mongodb";
-import {DecodedEventData, EncodedEventData, EventData} from "../base/event/event";
+import { DecodedEventData, EncodedEventData, EventData } from "../base/event/event";
 
 export interface RepetitionDBScheme {
     /**
