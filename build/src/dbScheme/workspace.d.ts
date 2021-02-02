@@ -39,4 +39,13 @@ export interface WorkspaceDBScheme {
      * Total number of errors since the last charge date
      */
     billingPeriodEventsCount: number;
+    /**
+     * ID of subscription if it subscribed
+     * Returns from CloudPayments
+     */
+    subscriptionId?: string;
+    /**
+     * Is workspace blocked for catching new events
+     */
+    isBlocked: boolean;
 }
