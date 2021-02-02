@@ -47,5 +47,5 @@ export interface WorkspaceDBScheme {
     /**
      * Is workspace blocked for catching new events
      */
-    isBlocked: boolean;
+    isBlocked?: boolean;
 }
