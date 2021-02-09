@@ -78,6 +78,11 @@ export interface PayloadOfWorkspacePlanPurchase {
    * ID of the user who made the payment
    */
   userId: ObjectId;
+
+  /**
+   * Id of the workspace tariff plan
+   */
+  tariffPlanId: ObjectId
 }
 
 /**
