@@ -1,21 +1,44 @@
 import { ObjectId } from "mongodb";
 
 /**
- * Membership collection DB implementation
+ * Represents confirmed member info in DB
  */
-export interface MembershipDBScheme {
+export interface ConfirmedMemberDBScheme {
     /**
      * Document id
      */
     _id: ObjectId;
 
     /**
-     * User's workspace id
+     * Id of the member of workspace
      */
-    workspaceId: ObjectId;
+    userId: ObjectId;
 
     /**
-     * Shows if member is pending
+     * Is user admin in workspace
      */
-    isPending?: boolean;
+    isAdmin?: boolean;
 }
+
+
+/**
+ * Represents pending member info in DB
+ */
+export interface PendingMemberDBScheme {
+    /**
+     * Document id
+     */
+    _id: ObjectId;
+
+    /**
+     * User email for invitation
+     */
+    userEmail: string;
+}
+
+
+/**
+ * Represents full structure of team collection documents
+ */
+export type MemberDBScheme = ConfirmedMemberDBScheme | PendingMemberDBScheme;
+
