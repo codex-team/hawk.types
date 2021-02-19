@@ -2,6 +2,8 @@ export * from "./src/auth/tokensPair";
 
 export * from "./src/base/businessOperation/businessOperation";
 
+export * from "./src/billing/planProlongrationPayload";
+
 export * from "./src/base/event/affectedUser";
 export * from "./src/base/event/backtraceFrame";
 export * from "./src/base/event/event";
