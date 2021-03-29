@@ -1,50 +1,29 @@
-import { BacktraceFrame } from "./backtraceFrame";
-import { AffectedUser } from "./affectedUser";
-/**
- * Represents simple JSON-like document
- */
-declare type Dict = {
-    [key: string]: DictNode;
-};
-/**
- * Represents possible field values in Dict
- */
-declare type DictNode = string | number | boolean | Dict;
+import { BacktraceFrame } from './backtraceFrame';
+import { AffectedUser } from './affectedUser';
+import { EventAddons } from './addons';
+import { Json } from '../../utils';
 /**
  * Information about event
  * That object will be send as 'payload' to the Collector
  */
-export interface EventData {
+export interface EventData<CatcherAddons extends EventAddons> {
     /**
      * Event title
      */
     title: string;
     /**
-     * Occurrence time
-     * [!] Must be a Unix timestamp in seconds (example: 1567009247.576)
+     * Event type (severity level)
      */
-    timestamp: number;
+    type?: string;
     /**
      * Stack
      * From the latest call to the earliest
      */
     backtrace?: BacktraceFrame[];
     /**
-     * GET parameters
-     */
-    get?: object;
-    /**
-     * POST parameters
-     */
-    post?: object;
-    /**
-     * Headers map
-     */
-    headers?: object;
-    /**
      * Catcher-specific information
      */
-    addons?: Dict | string;
+    addons?: CatcherAddons | string;
     /**
      * Current release (aka version, revision) of an application
      */
@@ -56,26 +35,38 @@ export interface EventData {
     /**
      * Any other information collected and passed by user
      */
-    context?: Dict | string;
+    context?: EventContext | string;
+}
+/**
+ * Event accepted and processed by Collector.
+ * It sets the timestamp to the event payload.
+ */
+export interface EventDataAccepted extends EventData<EventAddons> {
+    /**
+     * Occurrence time
+     * Unix timestamp in seconds (example: 1567009247.576)
+     * (Set by the Collector)
+     */
+    timestamp: number;
 }
 /**
  * Event data with decoded unsafe fields
  */
-export interface DecodedEventData extends EventData {
+export interface DecodedEventData extends EventData<EventAddons> {
     /**
      * Decoded context
      */
-    context?: Dict;
+    context?: EventContext;
     /**
      * Decoded addons
      */
-    addons?: Dict;
+    addons?: EventAddons;
 }
 /**
  * Event data with encoded unsafe fields
  *
  */
-export interface EncodedEventData extends EventData {
+export interface EncodedEventData extends EventData<EventAddons> {
     /**
      * Encoded context
      */
@@ -85,4 +76,7 @@ export interface EncodedEventData extends EventData {
      */
     addons?: string;
 }
-export {};
+/**
+ * Context is any additional data sent by developer
+ */
+export declare type EventContext = Json;

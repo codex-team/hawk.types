@@ -1,6 +1,7 @@
 import { ObjectId } from "mongodb";
 import { DecodedEventData, EncodedEventData, EventData } from "../base/event/event";
 import { UserDBScheme } from "./user";
+import { EventAddons } from '../base/event/addons';
 /**
  * Event data after grouper-worker transformation to store it in database
  */
@@ -24,7 +25,7 @@ export interface GroupedEventDBScheme {
     /**
      * Event data
      */
-    payload: EventData;
+    payload: EventData<EventAddons>;
     /**
      * How many users catch this error
      */
