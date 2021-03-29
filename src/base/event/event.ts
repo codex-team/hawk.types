@@ -49,7 +49,7 @@ export interface EventData<CatcherAddons extends EventAddons> {
  * Event accepted and processed by Collector.
  * It sets the timestamp to the event payload.
  */
-export interface EventDataAccepted extends EventData<EventAddons> {
+export interface EventDataAccepted<EventAddons> extends EventData<EventAddons> {
     /**
      * Occurrence time
      * Unix timestamp in seconds (example: 1567009247.576)
@@ -62,7 +62,7 @@ export interface EventDataAccepted extends EventData<EventAddons> {
 /**
  * Event data with decoded unsafe fields
  */
-export interface DecodedEventData extends EventData<EventAddons> {
+export interface DecodedEventData<EventAddons> extends EventDataAccepted<EventAddons> {
     /**
      * Decoded context
      */
@@ -78,7 +78,7 @@ export interface DecodedEventData extends EventData<EventAddons> {
  * Event data with encoded unsafe fields
  *
  */
-export interface EncodedEventData extends EventData<EventAddons> {
+export interface EncodedEventData extends EventDataAccepted<EventAddons> {
     /**
      * Encoded context
      */

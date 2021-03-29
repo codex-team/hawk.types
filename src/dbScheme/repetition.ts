@@ -1,6 +1,6 @@
 import { ObjectId } from "mongodb";
-import { DecodedEventData, EncodedEventData, EventData } from "../base/event/event";
-import {EventAddons} from '../base/event/addons';
+import { DecodedEventData, EncodedEventData, EventDataAccepted } from '../base/event/event';
+import { EventAddons } from '../base/event/addons';
 
 export interface RepetitionDBScheme {
     /**
@@ -14,17 +14,17 @@ export interface RepetitionDBScheme {
     groupHash: string;
 
     /**
-     * And any of EventData field with diff
+     * And any of EventDataAccepted field with diff
      * except fields that used in groupHash
      */
-    payload: EventData<EventAddons>;
+    payload: EventDataAccepted<EventAddons>;
 }
 
 /**
  * Repetition with decoded event data
  */
 export interface DecodedRepetition {
-    payload: DecodedEventData
+    payload: DecodedEventData<EventAddons>
 }
 
 /**

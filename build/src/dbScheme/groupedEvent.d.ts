@@ -1,5 +1,5 @@
 import { ObjectId } from "mongodb";
-import { DecodedEventData, EncodedEventData, EventData } from "../base/event/event";
+import { DecodedEventData, EncodedEventData, EventDataAccepted } from "../base/event/event";
 import { UserDBScheme } from "./user";
 import { EventAddons } from '../base/event/addons';
 /**
@@ -25,7 +25,7 @@ export interface GroupedEventDBScheme {
     /**
      * Event data
      */
-    payload: EventData<EventAddons>;
+    payload: EventDataAccepted<EventAddons>;
     /**
      * How many users catch this error
      */
@@ -39,7 +39,7 @@ export interface GroupedEventDBScheme {
  * Grouped event with decoded event data
  */
 export interface DecodedGroupedEvent extends GroupedEventDBScheme {
-    payload: DecodedEventData;
+    payload: DecodedEventData<EventAddons>;
 }
 /**
  * Grouped event with encoded event data
