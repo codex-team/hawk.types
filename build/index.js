@@ -17,6 +17,7 @@ __exportStar(require("./src/base/event/affectedUser"), exports);
 __exportStar(require("./src/base/event/backtraceFrame"), exports);
 __exportStar(require("./src/base/event/event"), exports);
 __exportStar(require("./src/base/event/sourceCodeLine"), exports);
+__exportStar(require("./src/base/event/addons"), exports);
 __exportStar(require("./src/dbScheme/businessOperation"), exports);
 __exportStar(require("./src/dbScheme/groupedEvent"), exports);
 __exportStar(require("./src/dbScheme/notificationsChannels"), exports);
@@ -33,3 +34,4 @@ __exportStar(require("./src/notifications/createProjectNotifications"), exports)
 __exportStar(require("./src/notifications/receiveTypes"), exports);
 __exportStar(require("./src/notifications/updateProjectNotifications"), exports);
 __exportStar(require("./src/notifications/userNotification"), exports);
+__exportStar(require("./src/utils"), exports);

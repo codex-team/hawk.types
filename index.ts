@@ -8,6 +8,7 @@ export * from "./src/base/event/affectedUser";
 export * from "./src/base/event/backtraceFrame";
 export * from "./src/base/event/event";
 export * from "./src/base/event/sourceCodeLine";
+export * from "./src/base/event/addons";
 
 export * from "./src/dbScheme/businessOperation";
 export * from "./src/dbScheme/groupedEvent";
@@ -26,3 +27,5 @@ export * from "./src/notifications/createProjectNotifications";
 export * from "./src/notifications/receiveTypes";
 export * from "./src/notifications/updateProjectNotifications";
 export * from "./src/notifications/userNotification";
+
+export * from './src/utils';

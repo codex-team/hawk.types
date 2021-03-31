@@ -1,31 +1,22 @@
-import { BacktraceFrame } from "./backtraceFrame";
-import { AffectedUser } from "./affectedUser";
-
-/**
- * Represents simple JSON-like document
- */
-type Dict = {[key: string]: DictNode};
-
-/**
- * Represents possible field values in Dict
- */
-type DictNode = string | number | boolean | Dict;
+import { BacktraceFrame } from './backtraceFrame';
+import { AffectedUser } from './affectedUser';
+import { EventAddons } from './addons';
+import { Json } from '../../utils';
 
 /**
  * Information about event
  * That object will be send as 'payload' to the Collector
  */
-export interface EventData {
+export interface EventData<CatcherAddons extends EventAddons> {
     /**
      * Event title
      */
     title: string;
 
     /**
-     * Occurrence time
-     * [!] Must be a Unix timestamp in seconds (example: 1567009247.576)
+     * Event type (severity level)
      */
-    timestamp: number;
+    type?: string;
 
     /**
      * Stack
@@ -34,28 +25,9 @@ export interface EventData {
     backtrace?: BacktraceFrame[];
 
     /**
-     * GET parameters
-     */
-    // eslint-disable-next-line
-    get?: object;
-
-    /**
-     * POST parameters
-     */
-    // eslint-disable-next-line
-    post?: object;
-
-    /**
-     * Headers map
-     */
-    // eslint-disable-next-line
-    headers?: object;
-
-    /**
      * Catcher-specific information
      */
-    // eslint-disable-next-line
-    addons?: Dict | string;
+    addons?: CatcherAddons | string;
 
     /**
      * Current release (aka version, revision) of an application
@@ -70,30 +42,43 @@ export interface EventData {
     /**
      * Any other information collected and passed by user
      */
-    // eslint-disable-next-line
-    context?: Dict | string;
+    context?: EventContext | string;
 }
+
+/**
+ * Event accepted and processed by Collector.
+ * It sets the timestamp to the event payload.
+ */
+export interface EventDataAccepted<EventAddons> extends EventData<EventAddons> {
+    /**
+     * Occurrence time
+     * Unix timestamp in seconds (example: 1567009247.576)
+     * (Set by the Collector)
+     */
+    timestamp: number;
+}
+
 
 /**
  * Event data with decoded unsafe fields
  */
-export interface DecodedEventData extends EventData {
+export interface DecodedEventData<EventAddons> extends EventDataAccepted<EventAddons> {
     /**
      * Decoded context
      */
-    context?: Dict;
+    context?: EventContext;
 
     /**
      * Decoded addons
      */
-    addons?: Dict;
+    addons?: EventAddons;
 }
 
 /**
  * Event data with encoded unsafe fields
  *
  */
-export interface EncodedEventData extends EventData {
+export interface EncodedEventData extends EventDataAccepted<EventAddons> {
     /**
      * Encoded context
      */
@@ -104,3 +89,8 @@ export interface EncodedEventData extends EventData {
      */
     addons?: string;
 }
+
+/**
+ * Context is any additional data sent by developer
+ */
+export type EventContext = Json;
