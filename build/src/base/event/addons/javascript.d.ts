@@ -1,5 +1,26 @@
 import { Json } from '../../../utils';
 /**
+ * Parsed user agent
+ */
+export interface BeautifiedUserAgent {
+    /**
+     * Operation system
+     */
+    os: string;
+    /**
+     * Version of operation system
+     */
+    osVersion: string;
+    /**
+     * Browser name
+     */
+    browser: string;
+    /**
+     * Full browser version
+     */
+    browserVersion: string;
+}
+/**
  * Additional data that can be sent by the JavaScript Catcher
  */
 export interface JavaScriptAddons {
@@ -15,6 +36,10 @@ export interface JavaScriptAddons {
      * Where error happened
      */
     url: string;
+    /**
+     * Parsed user agent
+     */
+    beautifiedUserAgent?: BeautifiedUserAgent;
     /**
      * Query parameters for the current URL
      */

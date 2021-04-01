@@ -1,4 +1,4 @@
-import { JavaScriptAddons, WindowData, VueIntegrationAddons } from './javascript';
+import { JavaScriptAddons, WindowData, VueIntegrationAddons, BeautifiedUserAgent } from './javascript';
 import { PhpAddons } from './php';
 import { NodeJSAddons } from './nodejs';
 import { GoAddons } from './go';
@@ -18,6 +18,7 @@ type EventAddons =
 export {
   WindowData,
   VueIntegrationAddons,
+  BeautifiedUserAgent,
   EventAddons,
   JavaScriptAddons,
   PhpAddons,
