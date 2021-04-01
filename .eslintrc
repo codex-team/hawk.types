@@ -6,6 +6,7 @@
     "plugin:@typescript-eslint/recommended"
   ],
   "rules": {
-    "object-curly-spacing": ["error", "always"]
+    "object-curly-spacing": ["error", "always"],
+    "@typescript-eslint/no-empty-interface": ["off"]
   }
 }
