@@ -15,7 +15,7 @@ jobs:
 
       - run: yarn
       - run: yarn lint
-      - run: yarn tcs
+      - run: yarn tsc
 
       - uses: EndBug/add-and-commit@v7
         with:
