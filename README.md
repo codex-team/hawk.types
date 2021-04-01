@@ -4,14 +4,19 @@ Types for Hawk's modules
 
 ## How to add new types
 
-Add new types to `src` folder
+1. Add new types to `src` folder.
+2. Create a pull request.
 
-Lint
+github-actions bot will check list styles, build types and commit changes. 
+
+### Lint
+
 ```
 $ yarn lint
 ```
 
-Build 
+### Build 
+
 ```
 $ yarn tsc
 ```
