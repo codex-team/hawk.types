@@ -1,0 +1,24 @@
+name: Lint and Build
+
+on: [pull_request]
+
+jobs:
+  lint:
+    name: ESlint
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Use Node.js 15
+        uses: actions/setup-node@v1
+        with:
+          node-version: 15
+
+      - run: yarn
+      - run: yarn lint
+      - run: yarn tcs
+
+      - uses: EndBug/add-and-commit@v7
+        with:
+          author_name: github-actions
+          author_email: 41898282+github-actions[bot]@users.noreply.github.com
+          message: 'Lint and build'
