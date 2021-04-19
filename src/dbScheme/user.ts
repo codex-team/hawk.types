@@ -1,5 +1,6 @@
 import { ObjectId } from "mongodb";
 import { UserNotificationsDBScheme } from "../../index";
+import { BankCard } from "./bankCard";
 
 /**
  * Interface representing how user is stored in DB
@@ -45,4 +46,9 @@ export interface UserDBScheme {
      * User notifications settings
      */
     notifications?: UserNotificationsDBScheme;
+
+    /**
+     * Saved bank cards for one-click payments
+     */
+    bankCards?: BankCard[];
 }

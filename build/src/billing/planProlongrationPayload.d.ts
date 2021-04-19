@@ -14,4 +14,8 @@ export interface PlanProlongationPayload {
      * Workspace current plan id or plan id to change
      */
     tariffPlanId: string;
+    /**
+     * If true, we will save user card
+     */
+    shouldSaveCard: boolean;
 }
