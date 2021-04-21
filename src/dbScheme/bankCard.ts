@@ -3,6 +3,11 @@
  */
 export interface BankCard {
   /**
+   * Card id (uuid)
+   */
+  id: string;
+
+  /**
    * First six numbers of the card PAN
    */
   firstSix: number;
