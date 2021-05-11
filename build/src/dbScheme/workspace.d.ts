@@ -12,6 +12,10 @@ export interface WorkspaceDBScheme {
      */
     name: string;
     /**
+     * Workspace's invite hash
+     */
+    inviteHash: string;
+    /**
      * Workspace account uuid in accounting microservice
      */
     accountId: string;
