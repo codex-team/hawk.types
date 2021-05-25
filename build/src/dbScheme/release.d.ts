@@ -19,7 +19,7 @@ export interface CommitData {
     /**
      * Commit date
      */
-    date: string;
+    date: Date;
 }
 /**
  * Interface representing how project releases are stored in the DB

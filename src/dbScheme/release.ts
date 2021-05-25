@@ -4,7 +4,7 @@ import { SourceMapDataExtended } from './sourceMap';
 /**
  * Git commit data needed to create a release
  */
- export interface CommitData {
+export interface CommitData {
   /**
    * Commit hash
    */
@@ -23,7 +23,7 @@ import { SourceMapDataExtended } from './sourceMap';
   /**
    * Commit date
    */
-  date: string;
+  date: Date;
 }
 
 /**
