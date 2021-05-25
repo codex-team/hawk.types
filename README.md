@@ -2,12 +2,18 @@
 
 Types for Hawk's modules
 
+## Installation
+
+```
+yarn add codex-team/hawk.types
+```
+
 ## How to add new types
 
 1. Add new types to `src` folder.
 2. Create a pull request.
 
-github-actions bot will check lint styles, build types and commit changes. 
+github-actions bot will check lint styles, build types and commit changes.
 
 ### Lint
 
@@ -15,7 +21,7 @@ github-actions bot will check lint styles, build types and commit changes.
 $ yarn lint
 ```
 
-### Build 
+### Build
 
 ```
 $ yarn tsc
