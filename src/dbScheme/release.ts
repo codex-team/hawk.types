@@ -56,11 +56,6 @@ export interface ReleaseDBScheme {
   release: string;
 
   /**
-   * Type of catcher used in the project
-   */
-  catcherType: string;
-
-  /**
    * Commit data, to identify suspicious ones
    */
   commits: CommitData[];
