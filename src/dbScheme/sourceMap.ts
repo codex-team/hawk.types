@@ -1,7 +1,7 @@
 import { ObjectID, Timestamp } from 'mongodb';
 
 /**
- * Sourcemaps info stored in the release
+ * Source map with parsed file names, stored in the release
  */
 export interface SourceMapDataExtended {
   /**
@@ -70,7 +70,7 @@ export interface SourceMapFileChunk {
 }
 
 /**
- * Contents of the sourcemap
+ * Source maps passed from user after bundle
  */
 export interface SourcemapCollectedData {
   /**
