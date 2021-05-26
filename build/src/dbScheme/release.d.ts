@@ -1,7 +1,7 @@
 import { ObjectId } from "mongodb";
 import { SourceMapDataExtended } from './sourceMap';
 /**
- * Git commit data needed to create a release
+ * Git commit data stored in the release
  */
 export interface CommitData {
     /**
