@@ -1,7 +1,7 @@
 import { ObjectId } from "mongodb";
 import { SourceMapDataExtended } from './sourceMap';
 /**
- * Git commit data needed to create a release
+ * Git commit data stored in the release
  */
 export interface CommitData {
     /**
@@ -47,10 +47,6 @@ export interface ReleaseDBScheme {
      * @example Version 1.0
      */
     release: string;
-    /**
-     * Type of catcher used in the project
-     */
-    catcherType: string;
     /**
      * Commit data, to identify suspicious ones
      */
