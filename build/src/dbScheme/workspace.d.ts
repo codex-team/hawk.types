@@ -52,4 +52,11 @@ export interface WorkspaceDBScheme {
      * Is workspace blocked for catching new events
      */
     isBlocked?: boolean;
+    /**
+     * List of last dates for notifications
+     * Used to reduce frequency of some system messages
+     */
+    lastNotificationDate: {
+        [key: string]: Date;
+    };
 }
