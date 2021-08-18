@@ -69,5 +69,5 @@ export interface WorkspaceDBScheme {
      * List of last dates for notifications
      * Used to reduce frequency of some system messages
      */
-    lastNotificationDate: {[key: string]: Date};
+    lastNotificationDate?: {[key: string]: Date};
 }
