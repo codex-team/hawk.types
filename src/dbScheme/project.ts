@@ -13,7 +13,7 @@ export interface ProjectDBScheme {
   /**
    * Unique integration id used, that's used as collector domain url for sending events
    *
-   * @example `wss://${domainInCollector}.k1.hawk.so/ws`
+   * @example `wss://${integrationId}.k1.hawk.so/ws`
    */
   integrationId: string;
 
