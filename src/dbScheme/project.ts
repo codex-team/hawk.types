@@ -11,7 +11,7 @@ export interface ProjectDBScheme {
   _id: ObjectId;
 
   /**
-   * Unique integration id used, that's used as collector domain url for sending events
+   * Unique integration id, that's used as collector domain url for sending events
    *
    * @example `wss://${integrationId}.k1.hawk.so/ws`
    */
