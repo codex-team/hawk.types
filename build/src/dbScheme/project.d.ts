@@ -1,5 +1,5 @@
-import { ObjectId } from "mongodb";
-import { ProjectNotificationsRuleDBScheme } from "../../index";
+import { ObjectId } from 'mongodb';
+import { ProjectNotificationsRuleDBScheme } from '../../index';
 /**
  * Structure represents a Project in DataBase
  */
@@ -8,6 +8,12 @@ export interface ProjectDBScheme {
      * Project ID
      */
     _id: ObjectId;
+    /**
+     * Unique integration id, that's used as collector domain url for sending events
+     *
+     * @example `wss://${integrationId}.k1.hawk.so/ws`
+     */
+    integrationId: string;
     /**
      * Project Integration Token
      */
