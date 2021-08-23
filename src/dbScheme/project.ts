@@ -11,11 +11,11 @@ export interface ProjectDBScheme {
   _id: ObjectId;
 
   /**
-   * Domain in collector, that's used in URL for sending events
+   * Unique integration id used, that's used as collector domain url for sending events
    *
    * @example `wss://${domainInCollector}.k1.hawk.so/ws`
    */
-  domainInCollector: string;
+  integrationId: string;
 
   /**
    * Project Integration Token
