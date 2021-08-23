@@ -13,7 +13,7 @@ export interface ProjectDBScheme {
      *
      * @example `wss://${domainInCollector}.k1.hawk.so/ws`
      */
-    domainInCollector: string;
+    integrationId: string;
     /**
      * Project Integration Token
      */
