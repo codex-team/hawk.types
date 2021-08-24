@@ -36,6 +36,10 @@ export interface EventData<CatcherAddons extends EventAddons> {
      * Any other information collected and passed by user
      */
     context?: EventContext | string;
+    /**
+     * Catcher version
+     */
+    catcherVersion: string;
 }
 /**
  * Event accepted and processed by Collector.
