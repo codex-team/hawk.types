@@ -14,7 +14,7 @@ export interface BacktraceFrame {
     /**
      * Column number
      */
-    column: number;
+    column?: number;
     /**
      * Sibling source code lines: some above and some below
      */

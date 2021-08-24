@@ -39,7 +39,7 @@ export interface EventData<CatcherAddons extends EventAddons> {
     /**
      * Catcher version
      */
-    catcherVersion: string;
+    catcherVersion?: string;
 }
 /**
  * Event accepted and processed by Collector.

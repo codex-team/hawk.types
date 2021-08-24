@@ -45,9 +45,9 @@ export interface EventData<CatcherAddons extends EventAddons> {
     context?: EventContext | string;
 
     /**
-     * Catcher version 
+     * Catcher version
      */
-    catcherVersion: string;
+    catcherVersion?: string;
 }
 
 /**
