@@ -46,7 +46,7 @@ jobs:
 
       # Bump version to the next prerelease (patch) with rc suffix
       - name: Suggest the new version
-        run: yarn version --no-git-tag-version
+        run: yarn version --patch --no-git-tag-version
 
       # Get package new version name
       - name: Get package info
