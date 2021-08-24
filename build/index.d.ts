@@ -6,6 +6,7 @@ export * from "./src/base/event/backtraceFrame";
 export * from "./src/base/event/event";
 export * from "./src/base/event/sourceCodeLine";
 export * from "./src/base/event/addons";
+export * from "./src/base/integrations/integrationToken";
 export * from "./src/dbScheme/businessOperation";
 export * from "./src/dbScheme/groupedEvent";
 export * from "./src/dbScheme/notificationsChannels";
