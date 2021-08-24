@@ -4,7 +4,7 @@ on: [pull_request]
 
 jobs:
   # If pull request was merged then we should check for a package version update
-  check-for-no-version-changing:
+  check-version-update:
     runs-on: ubuntu-latest
     steps:
       # Checkout to target branch
@@ -32,7 +32,7 @@ jobs:
         if: steps.packageOld.outputs.version != steps.packageNew.outputs.version
 
   bump-version:
-    needs: check-for-no-version-changing
+    needs: check-version-update
     runs-on: ubuntu-latest
     steps:
       # Checkout to target branch
