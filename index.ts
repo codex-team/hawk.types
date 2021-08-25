@@ -33,4 +33,6 @@ export * from "./src/notifications/receiveTypes";
 export * from "./src/notifications/updateProjectNotifications";
 export * from "./src/notifications/userNotification";
 
+export * from "./src/catchers/catcher-message";
+
 export * from './src/utils';
