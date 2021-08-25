@@ -1,5 +1,5 @@
 {
-  "name": "hawk.types",
+  "name": "@hawk.so/types",
   "version": "0.1.12",
   "description": "TypeScript definitions for Hawk",
   "types": "build/index.d.ts",
