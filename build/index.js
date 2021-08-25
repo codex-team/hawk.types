@@ -38,4 +38,5 @@ __exportStar(require("./src/notifications/createProjectNotifications"), exports)
 __exportStar(require("./src/notifications/receiveTypes"), exports);
 __exportStar(require("./src/notifications/updateProjectNotifications"), exports);
 __exportStar(require("./src/notifications/userNotification"), exports);
+__exportStar(require("./src/catchers/catcher-message"), exports);
 __exportStar(require("./src/utils"), exports);
