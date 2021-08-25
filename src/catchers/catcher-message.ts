@@ -1,10 +1,10 @@
 import { EventData } from "../base/event/event";
-import { JavaScriptAddons } from "../base/event/addons";
+import { EventAddons } from "../base/event/addons";
 
 /**
  * Structure describing a message sending by Catcher
  */
-export default interface CatcherMessage {
+export default interface CatcherMessage<CatcherAddons extends EventAddons> {
   /**
    * User project's Integration Token
    */
@@ -18,5 +18,5 @@ export default interface CatcherMessage {
   /**
    * All information about the event
    */
-  payload: EventData<JavaScriptAddons>;
+  payload: EventData<CatcherAddons>;
 }
