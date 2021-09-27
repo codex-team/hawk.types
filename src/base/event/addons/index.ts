@@ -3,6 +3,7 @@ import { PhpAddons } from './php';
 import { NodeJSAddons } from './nodejs';
 import { GoAddons } from './go';
 import { PythonAddons } from './python';
+import { DefaultAddons } from './default';
 
 /**
  * Union Type describing all catcher-specific additional data
@@ -13,6 +14,7 @@ type EventAddons =
   | NodeJSAddons
   | GoAddons
   | PythonAddons
+  | DefaultAddons
 ;
 
 export {
@@ -24,5 +26,6 @@ export {
   PhpAddons,
   NodeJSAddons,
   GoAddons,
-  PythonAddons
+  PythonAddons,
+  DefaultAddons
 }
