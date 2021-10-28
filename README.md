@@ -5,7 +5,7 @@ Types for Hawk's modules
 ## Installation
 
 ```
-yarn add codex-team/hawk.types
+yarn add @hawk.so/types
 ```
 
 ## How to add new types
