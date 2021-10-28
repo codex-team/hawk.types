@@ -27,5 +27,5 @@ export interface PlanDBScheme {
      * Special plans to be selected manually
      * No one cannot be switched to this plan by api
      */
-    isHidden: boolean;
+    isHidden?: boolean;
 }
