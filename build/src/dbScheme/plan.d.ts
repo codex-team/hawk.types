@@ -23,4 +23,9 @@ export interface PlanDBScheme {
      * Is this plan used by default?
      */
     isDefault: boolean;
+    /**
+     * Special plans to be selected manually
+     * No one cannot be switched to this plan by api
+     */
+    isHidden?: boolean;
 }
