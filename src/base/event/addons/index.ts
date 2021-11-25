@@ -9,6 +9,7 @@ import { DefaultAddons } from './default';
  * Union Type describing all catcher-specific additional data
  */
 type EventAddons =
+  | DefaultAddons
   | JavaScriptAddons
   | PhpAddons
   | NodeJSAddons
@@ -22,6 +23,7 @@ export {
   VueIntegrationAddons,
   BeautifiedUserAgent,
   EventAddons,
+  DefaultAddons,
   JavaScriptAddons,
   PhpAddons,
   NodeJSAddons,
