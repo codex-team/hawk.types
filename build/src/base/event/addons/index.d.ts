@@ -7,5 +7,5 @@ import { DefaultAddons } from './default';
 /**
  * Union Type describing all catcher-specific additional data
  */
-declare type EventAddons = JavaScriptAddons | PhpAddons | NodeJSAddons | GoAddons | PythonAddons | DefaultAddons;
-export { WindowData, VueIntegrationAddons, BeautifiedUserAgent, EventAddons, JavaScriptAddons, PhpAddons, NodeJSAddons, GoAddons, PythonAddons, DefaultAddons };
+declare type EventAddons = DefaultAddons | JavaScriptAddons | PhpAddons | NodeJSAddons | GoAddons | PythonAddons;
+export { WindowData, VueIntegrationAddons, BeautifiedUserAgent, EventAddons, DefaultAddons, JavaScriptAddons, PhpAddons, NodeJSAddons, GoAddons, PythonAddons, };

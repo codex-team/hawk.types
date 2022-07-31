@@ -15,7 +15,6 @@ type EventAddons =
   | NodeJSAddons
   | GoAddons
   | PythonAddons
-  | DefaultAddons
 ;
 
 export {
@@ -29,5 +28,4 @@ export {
   NodeJSAddons,
   GoAddons,
   PythonAddons,
-  DefaultAddons
 }
