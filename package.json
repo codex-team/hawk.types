@@ -1,6 +1,6 @@
 {
   "name": "@hawk.so/types",
-  "version": "0.1.19",
+  "version": "0.1.20",
   "description": "TypeScript definitions for Hawk",
   "types": "build/index.d.ts",
   "main": "build/index.js",
@@ -11,7 +11,7 @@
     "build": "tsc"
   },
   "dependencies": {
-    "@types/mongodb": "^3.5.34"
+    "@types/mongodb": "^4.0.7"
   },
   "devDependencies": {
     "eslint": "^7.14.0",

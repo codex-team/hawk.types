@@ -1,4 +1,4 @@
-import { ObjectID, Timestamp } from 'mongodb';
+import { ObjectId, Timestamp } from 'mongodb';
 /**
  * Source map with parsed file names, stored in the release
  */
@@ -23,7 +23,7 @@ export interface SourceMapDataExtended {
     /**
      * When file will be saved to GridFS, there will be its id instead of 'content'
      */
-    _id?: ObjectID;
+    _id?: ObjectId;
 }
 /**
  * Object represents a file structure stored in Mongo GridFS
@@ -34,7 +34,7 @@ export interface SourceMapFileChunk {
     /**
      * Unique id of a file chunk
      */
-    _id: ObjectID;
+    _id: ObjectId;
     /**
      * Chunk size in bytes
      */
