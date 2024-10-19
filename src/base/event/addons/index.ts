@@ -29,5 +29,4 @@ export {
   NodeJSAddons,
   GoAddons,
   PythonAddons,
-  DefaultAddons
 }
