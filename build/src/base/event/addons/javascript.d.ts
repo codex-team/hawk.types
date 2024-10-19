@@ -77,7 +77,7 @@ export interface VueIntegrationAddons {
     /**
      * Component name where error occurred
      */
-    component: string;
+    component: string | null;
     /**
      * Component props
      */
