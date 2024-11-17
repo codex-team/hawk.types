@@ -50,6 +50,11 @@ export interface PayloadOfDepositByUser {
   amount: number;
 
   /**
+   * Currency of payment
+   */
+  currency: string;
+
+  /**
    * ID of the user who made the payment
    */
   userId: ObjectId;
@@ -73,6 +78,11 @@ export interface PayloadOfWorkspacePlanPurchase {
    * Amount of payment
    */
   amount: number;
+
+  /**
+   * Currency of payment
+   */
+  currency: string;
 
   /**
    * ID of the user who made the payment

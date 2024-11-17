@@ -15,9 +15,14 @@ export interface PlanDBScheme {
     name: string;
 
     /**
-     * Monthly charge for plan in dollars
+     * Monthly charge for plan in currencry specified in `monthlyChargeCurrency`
      */
     monthlyCharge: number;
+
+    /**
+     * Currency of `monthlyCharge`
+     */
+    monthlyChargeCurrency: string;
 
     /**
      * Maximum amount of events available for plan
