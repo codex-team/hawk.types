@@ -17,7 +17,7 @@ export interface PlanDBScheme {
     /**
      * Monthly charge for plan in currencry specified in `monthlyChargeCurrency`
      */
-    monthlyCharge: number;
+    charge: number;
 
     /**
      * Currency of `monthlyCharge`
@@ -28,7 +28,7 @@ export interface PlanDBScheme {
      * How often to charge payment for the plan.
      * Monthly by default
      */
-    paymentFrequency?: 'monthly' | 'daily';
+    chargeFrequency?: 'monthly' | 'daily';
 
     /**
      * Maximum amount of events available for plan
