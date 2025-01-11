@@ -15,14 +15,14 @@ export interface PlanDBScheme {
     name: string;
 
     /**
-     * Monthly charge for plan in currencry specified in `monthlyChargeCurrency`
+     * Charge for plan in currencry specified in `chargeCurrency` with frequency specified in `chargeFrequency`
      */
     charge: number;
 
     /**
-     * Currency of `monthlyCharge`
+     * Currency of `charge`
      */
-    monthlyChargeCurrency: string;
+    chargeCurrency: string;
 
     /**
      * How often to charge payment for the plan.
