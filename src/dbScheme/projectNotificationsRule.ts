@@ -22,7 +22,7 @@ export interface ProjectNotificationsRuleDBScheme {
     uidAdded: ObjectId;
 
     /**
-     * Receive type: 'ALL'  or 'ONLY_NEW'
+     * Receive type: 'SEEN_MORE'  or 'ONLY_NEW'
      */
     whatToReceive: ReceiveTypes;
 
@@ -40,4 +40,14 @@ export interface ProjectNotificationsRuleDBScheme {
      * Available channels to receive
      */
     channels: NotificationsChannelsDBScheme;
+
+    /**
+     * If this number of events is reached in the eventThresholdPeriod, the rule will be triggered
+     */
+    threshold?: number;
+
+    /**
+     * Size of period (in milliseconds) to count events to compare to rule threshold
+     */
+    thresholdPeriod?: number;
 }
