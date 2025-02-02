@@ -9,5 +9,9 @@ export declare enum ReceiveTypes {
     /**
      * Only first occurrence
      */
-    ONLY_NEW = "ONLY_NEW"
+    ONLY_NEW = "ONLY_NEW",
+    /**
+     * Receive all
+     */
+    ALL = "ALL"
 }
