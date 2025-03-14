@@ -22,7 +22,6 @@ export * from "./src/dbScheme/user";
 export * from "./src/dbScheme/userNotifications";
 export * from "./src/dbScheme/workspace";
 export * from "./src/dbScheme/bankCard";
-export * from "./src/dbScheme/eventPattern";
 export * from "./src/notifications/createProjectNotifications";
 export * from "./src/notifications/receiveTypes";
 export * from "./src/notifications/updateProjectNotifications";

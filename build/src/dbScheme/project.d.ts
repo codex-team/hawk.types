@@ -42,4 +42,8 @@ export interface ProjectDBScheme {
      * Project notifications settings
      */
     notifications: ProjectNotificationsRuleDBScheme[];
+    /**
+     * Patterns for manual event grouping
+     */
+    patterns: string[];
 }
