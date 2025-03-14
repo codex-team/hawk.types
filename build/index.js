@@ -34,6 +34,7 @@ __exportStar(require("./src/dbScheme/user"), exports);
 __exportStar(require("./src/dbScheme/userNotifications"), exports);
 __exportStar(require("./src/dbScheme/workspace"), exports);
 __exportStar(require("./src/dbScheme/bankCard"), exports);
+__exportStar(require("./src/dbScheme/projectPattern"), exports);
 __exportStar(require("./src/notifications/createProjectNotifications"), exports);
 __exportStar(require("./src/notifications/receiveTypes"), exports);
 __exportStar(require("./src/notifications/updateProjectNotifications"), exports);
