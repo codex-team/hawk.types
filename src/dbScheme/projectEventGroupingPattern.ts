@@ -1,6 +1,6 @@
 import { ObjectId } from "mongodb";
 
-export interface ProjectPatternDBScheme {
+export interface ProjectEventGroupingPatternsDBScheme {
   /**
    * If of the pattern
    */
