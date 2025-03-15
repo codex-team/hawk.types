@@ -1,4 +1,4 @@
-import { Json } from "../../../utils";
+import { Json } from '../../../utils';
 
 /**
  * Parsed user agent
