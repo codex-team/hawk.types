@@ -26,6 +26,41 @@ export interface BeautifiedUserAgent {
 }
 
 /**
+ * Event from the browser console
+ */
+export interface ConsoleLogEvent {
+  /**
+   * Log method used (e.g., "log", "warn", "error")
+   */
+  method: string;
+
+  /**
+   * Timestamp of the log event
+   */
+  timestamp: Date;
+
+  /**
+   * Type of the log message (e.g., "error", "warning", "info")
+   */
+  type: string;
+
+  /**
+   * The main log message
+   */
+  message: string;
+
+  /**
+   * Stack trace if available
+   */
+  stack?: string;
+
+  /**
+   * File and line number where the log occurred
+   */
+  fileLine?: string;
+}
+
+/**
  * Additional data that can be sent by the JavaScript Catcher
  */
 export interface JavaScriptAddons {
@@ -63,6 +98,11 @@ export interface JavaScriptAddons {
    * Vue integration data
    */
   vue?: VueIntegrationAddons;
+
+  /**
+   * Console log events collected from the browser
+   */
+  consoleOutput?: ConsoleLogEvent[];
 }
 
 /**
