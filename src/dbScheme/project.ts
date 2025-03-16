@@ -1,5 +1,6 @@
 import { ObjectId } from 'mongodb';
 import { ProjectNotificationsRuleDBScheme } from '../../index';
+import { ProjectEventGroupingPatternsDBScheme } from '../../index';
 
 /**
  * Structure represents a Project in DataBase
@@ -51,4 +52,9 @@ export interface ProjectDBScheme {
    * Project notifications settings
    */
   notifications: ProjectNotificationsRuleDBScheme[];
+
+  /**
+   * Patterns for manual event grouping
+   */
+  eventGroupingPatterns: ProjectEventGroupingPatternsDBScheme[];
 }
