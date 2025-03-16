@@ -7,9 +7,9 @@ exports.ReceiveTypes = void 0;
 var ReceiveTypes;
 (function (ReceiveTypes) {
     /**
-     * All notifications
+     * If event seen more than threshold in thresholdPeriod
      */
-    ReceiveTypes["ALL"] = "ALL";
+    ReceiveTypes["SEEN_MORE"] = "SEEN_MORE";
     /**
      * Only first occurrence
      */

@@ -27,12 +27,20 @@ export enum BusinessOperationType {
   /**
    * Workspace plan purchase by payment worker
    */
-  WorkspacePlanPurchase='WORKSPACE_PLAN_PURCHASE',
+  WorkspacePlanPurchase = 'WORKSPACE_PLAN_PURCHASE',
 
   /**
    * Workspace deposit balance by user
    */
-  DepositByUser='DEPOSIT_BY_USER'
+  DepositByUser = 'DEPOSIT_BY_USER',
+  /**
+ * Charge minimal amount of money to link a card for further recurrent payments
+ */
+  CardLinkCharge = 'CARD_LINK_CHARGE',
+  /**
+   * Refund the money that were charged to link a card
+   */
+  CardLinkRefund = 'CARD_LINK_REFUND',
 }
 
 /**
@@ -48,6 +56,11 @@ export interface PayloadOfDepositByUser {
    * Amount of payment
    */
   amount: number;
+
+  /**
+   * Currency of payment
+   */
+  currency: string;
 
   /**
    * ID of the user who made the payment
@@ -73,6 +86,11 @@ export interface PayloadOfWorkspacePlanPurchase {
    * Amount of payment
    */
   amount: number;
+
+  /**
+   * Currency of payment
+   */
+  currency: string;
 
   /**
    * ID of the user who made the payment

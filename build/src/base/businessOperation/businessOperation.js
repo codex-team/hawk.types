@@ -32,4 +32,12 @@ var BusinessOperationType;
      * Workspace deposit balance by user
      */
     BusinessOperationType["DepositByUser"] = "DEPOSIT_BY_USER";
+    /**
+   * Charge minimal amount of money to link a card for further recurrent payments
+   */
+    BusinessOperationType["CardLinkCharge"] = "CARD_LINK_CHARGE";
+    /**
+     * Refund the money that were charged to link a card
+     */
+    BusinessOperationType["CardLinkRefund"] = "CARD_LINK_REFUND";
 })(BusinessOperationType = exports.BusinessOperationType || (exports.BusinessOperationType = {}));
