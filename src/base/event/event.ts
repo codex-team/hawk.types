@@ -53,7 +53,7 @@ export interface EventData<CatcherAddons extends EventAddons> {
 /**
  * Event accepted and processed by Collector.
  */
-export interface EventDataAccepted<EventAddons> extends EventData<EventAddons> {};
+export interface EventDataAccepted<EventAddons> extends EventData<EventAddons> {}
 
 
 /**
