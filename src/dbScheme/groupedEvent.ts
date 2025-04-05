@@ -41,6 +41,13 @@ export interface GroupedEventDBScheme {
      * Array of users who visited this event
      */
     visitedBy: UserDBScheme[];
+
+    /**
+     * Occurrence time
+     * Unix timestamp in seconds (example: 1567009247.576)
+     * (Set by the Collector)
+     */
+    timestamp: number;
 }
 
 /**
