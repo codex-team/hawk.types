@@ -48,6 +48,10 @@ export interface ConsoleLogEvent {
      * File and line number where the log occurred
      */
     fileLine?: string;
+    /**
+     * CSS styles for %c formatting
+     */
+    styles?: string[];
 }
 /**
  * Additional data that can be sent by the JavaScript Catcher
