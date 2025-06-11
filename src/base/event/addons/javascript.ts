@@ -58,6 +58,11 @@ export interface ConsoleLogEvent {
    * File and line number where the log occurred
    */
   fileLine?: string;
+
+  /**
+   * CSS styles for %c formatting
+   */
+  styles?: string[];
 }
 
 /**
