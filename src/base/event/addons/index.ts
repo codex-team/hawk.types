@@ -1,4 +1,4 @@
-import { JavaScriptAddons, WindowData, VueIntegrationAddons, BeautifiedUserAgent } from './javascript';
+import { JavaScriptAddons, WindowData, VueIntegrationAddons, BeautifiedUserAgent, ConsoleLogEvent } from './javascript';
 import { PhpAddons } from './php';
 import { NodeJSAddons } from './nodejs';
 import { GoAddons } from './go';
@@ -22,6 +22,7 @@ export {
   WindowData,
   VueIntegrationAddons,
   BeautifiedUserAgent,
+  ConsoleLogEvent,
   EventAddons,
   DefaultAddons,
   JavaScriptAddons,

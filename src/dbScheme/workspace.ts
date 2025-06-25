@@ -50,6 +50,12 @@ export interface WorkspaceDBScheme {
     lastChargeDate: Date;
 
     /**
+     * Date when subscription will be expired
+     * Used for pre-paid plans for several months
+     */
+    paidUntil?: Date;
+
+    /**
      * Total number of errors since the last charge date
      */
     billingPeriodEventsCount: number;
