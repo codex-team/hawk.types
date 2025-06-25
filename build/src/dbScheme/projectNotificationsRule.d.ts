@@ -41,4 +41,8 @@ export interface ProjectNotificationsRuleDBScheme {
      * Size of period (in milliseconds) to count events to compare to rule threshold
      */
     thresholdPeriod?: number;
+    /**
+     * If rule is created automatically (on project creation or conversion of old projects)
+     */
+    autoAdded?: string;
 }
