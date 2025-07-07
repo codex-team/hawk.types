@@ -27,7 +27,7 @@ export interface EventData<Addons extends EventAddons> {
     /**
      * Catcher-specific information
      */
-    addons?: Addons | string;
+    addons?: Addons;
 
     /**
      * Current release (aka version, revision) of an application
@@ -51,39 +51,31 @@ export interface EventData<Addons extends EventAddons> {
 }
 
 /**
- * Event accepted and processed by Collector.
- * It sets the timestamp to the event payload.
- */
-export interface EventDataAccepted<Addons extends EventAddons> extends EventData<Addons> {}
-
-
-/**
  * Event data with decoded unsafe fields
  */
-export interface DecodedEventData<Addons extends EventAddons> extends EventDataAccepted<Addons> {
+export interface DecodedEventData<Addons extends EventAddons> extends EventData<Addons> {
     /**
-     * Decoded context
+     * Json parsed context string
      */
     context?: EventContext;
 
     /**
-     * Decoded addons
+     * Json parsed addons string
      */
     addons?: Addons;
 }
 
 /**
  * Event data with encoded unsafe fields
- *
  */
-export interface EncodedEventData extends EventDataAccepted<EventAddons> {
+export interface EncodedEventData extends EventData<EventAddons> {
     /**
-     * Encoded context
+     * Stringified context object
      */
     context?: string;
 
     /**
-     * Encoded addons
+     * Stringified addons object
      */
     addons?: string;
 }
