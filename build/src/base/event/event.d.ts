@@ -46,12 +46,6 @@ export interface EventData<CatcherAddons extends EventAddons> {
  * It sets the timestamp to the event payload.
  */
 export interface EventDataAccepted<EventAddons> extends EventData<EventAddons> {
-    /**
-     * Occurrence time
-     * Unix timestamp in seconds (example: 1567009247.576)
-     * (Set by the Collector)
-     */
-    timestamp: number;
 }
 /**
  * Event data with decoded unsafe fields
