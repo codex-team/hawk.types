@@ -1,5 +1,4 @@
 import { EventData } from '../base/event/event';
-import { LogData } from '../base/log/log';
 import { PerformanceData } from '../base/performance/performance';
 import type { JavaScriptAddons, PhpAddons, NodeJSAddons, GoAddons, PythonAddons } from '../base/event/addons';
 /**
@@ -7,19 +6,13 @@ import type { JavaScriptAddons, PhpAddons, NodeJSAddons, GoAddons, PythonAddons 
  */
 declare type ErrorsCatcherType = 'errors/javascript' | 'errors/php' | 'errors/nodejs' | 'errors/go' | 'errors/python';
 /**
- * Type that represents all supported Catcher message types for logs
- * @todo implement log catcher types
- */
-declare type LogsCatcherType = 'logs/javascript';
-/**
- * Type that represents all supported Catcher message types for metrics
- * @todo implement performance catcher types
+ * Type that represents all supported Catcher message types for performance
  */
 declare type MetricsCatcherType = 'performance';
 /**
  * Union type that represents all supported Catcher message types
  */
-declare type CatcherMessageType = ErrorsCatcherType | LogsCatcherType | MetricsCatcherType;
+declare type CatcherMessageType = ErrorsCatcherType | MetricsCatcherType;
 /**
  * Type that represents the payload of a Catcher message based on its type
  */
@@ -29,7 +22,6 @@ declare type CatcherMessagePayload<Type extends CatcherMessageType> = {
     'errors/nodejs': EventData<NodeJSAddons>;
     'errors/go': EventData<GoAddons>;
     'errors/python': EventData<PythonAddons>;
-    'logs/javascript': LogData;
     'performance': PerformanceData;
 }[Type];
 /**

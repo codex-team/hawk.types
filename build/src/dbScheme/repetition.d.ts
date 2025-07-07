@@ -1,5 +1,5 @@
 import { ObjectId } from "mongodb";
-import { DecodedEventData, EncodedEventData, EventDataAccepted } from '../base/event/event';
+import { DecodedEventData, EncodedEventData, EventData } from '../base/event/event';
 import { EventAddons } from '../base/event/addons';
 export interface RepetitionDBScheme {
     /**
@@ -12,10 +12,10 @@ export interface RepetitionDBScheme {
     groupHash: string;
     /**
      * @deprecated, use delta instead
-     * And any of EventDataAccepted field with diff
+     * And any of EventData field with diff
      * except fields that used in groupHash
      */
-    payload?: EventDataAccepted<EventAddons>;
+    payload?: EventData<EventAddons>;
     /**
      * Delta between original event and repetition
      */
@@ -23,7 +23,7 @@ export interface RepetitionDBScheme {
     /**
      * Occurrence time
      * Unix timestamp in seconds (example: 1567009247.576)
-     * (Set by the Collector)
+     * (created by the Collector)
      */
     timestamp: number;
 }
