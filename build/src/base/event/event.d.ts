@@ -3,10 +3,10 @@ import { AffectedUser } from './affectedUser';
 import { EventAddons } from './addons';
 import { Json } from '../../utils';
 /**
- * Information about event
+ * Information about event (Payload of the event)
  * That object will be send as 'payload' to the Collector
  */
-export interface EventData<CatcherAddons extends EventAddons> {
+export interface EventData<Addons extends EventAddons> {
     /**
      * Event title
      */
@@ -23,7 +23,7 @@ export interface EventData<CatcherAddons extends EventAddons> {
     /**
      * Catcher-specific information
      */
-    addons?: CatcherAddons | string;
+    addons?: Addons | string;
     /**
      * Current release (aka version, revision) of an application
      */
@@ -45,12 +45,12 @@ export interface EventData<CatcherAddons extends EventAddons> {
  * Event accepted and processed by Collector.
  * It sets the timestamp to the event payload.
  */
-export interface EventDataAccepted<EventAddons> extends EventData<EventAddons> {
+export interface EventDataAccepted<Addons extends EventAddons> extends EventData<Addons> {
 }
 /**
  * Event data with decoded unsafe fields
  */
-export interface DecodedEventData<EventAddons> extends EventDataAccepted<EventAddons> {
+export interface DecodedEventData<Addons extends EventAddons> extends EventDataAccepted<Addons> {
     /**
      * Decoded context
      */
@@ -58,7 +58,7 @@ export interface DecodedEventData<EventAddons> extends EventDataAccepted<EventAd
     /**
      * Decoded addons
      */
-    addons?: EventAddons;
+    addons?: Addons;
 }
 /**
  * Event data with encoded unsafe fields
