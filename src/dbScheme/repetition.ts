@@ -14,10 +14,23 @@ export interface RepetitionDBScheme {
     groupHash: string;
 
     /**
+     * @deprecated, use delta instead
      * And any of EventDataAccepted field with diff
      * except fields that used in groupHash
      */
-    payload: EventDataAccepted<EventAddons>;
+    payload?: EventDataAccepted<EventAddons>;
+
+    /**
+     * Delta between original event and repetition
+     */
+    delta?: string,
+    
+    /**
+     * Occurrence time
+     * Unix timestamp in seconds (example: 1567009247.576)
+     * (Set by the Collector)
+     */
+    timestamp: number;
 }
 
 /**
