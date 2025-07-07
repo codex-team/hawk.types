@@ -1,5 +1,5 @@
 import { ObjectId } from "mongodb";
-import { DecodedEventData, EncodedEventData, EventDataAccepted } from "../base/event/event";
+import { DecodedEventData, EncodedEventData, EventData } from "../base/event/event";
 import { UserDBScheme } from "./user";
 import { EventAddons } from '../base/event/addons';
 
@@ -30,7 +30,7 @@ export interface GroupedEventDBScheme {
     /**
      * Event data
      */
-    payload: EventDataAccepted<EventAddons>;
+    payload: EventData<EventAddons>;
 
     /**
      * How many users catch this error
@@ -45,7 +45,7 @@ export interface GroupedEventDBScheme {
     /**
      * Occurrence time
      * Unix timestamp in seconds (example: 1567009247.576)
-     * (Set by the Collector)
+     * (created by the Collector)
      */
     timestamp: number;
 }

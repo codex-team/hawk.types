@@ -5,7 +5,7 @@ import { Json } from '../../utils';
 
 /**
  * Information about event (Payload of the event)
- * That object will be send as 'payload' to the Collector
+ * That object will be sent as 'payload' from the Collector to the workers
  */
 export interface EventData<Addons extends EventAddons> {
     /**
