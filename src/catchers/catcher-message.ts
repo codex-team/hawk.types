@@ -22,12 +22,12 @@ type MetricsCatcherType = 'performance';
 /**
  * Union type that represents all supported Catcher message types
  */
-type CatcherMessageType = ErrorsCatcherType | MetricsCatcherType;
+export type CatcherMessageType = ErrorsCatcherType | MetricsCatcherType;
 
 /**
  * Type that represents the payload of a Catcher message based on its type
  */
-type CatcherMessagePayload<Type extends CatcherMessageType> = {
+export type CatcherMessagePayload<Type extends CatcherMessageType> = {
   'errors/javascript': EventData<JavaScriptAddons>;
   'errors/php': EventData<PhpAddons>;
   'errors/nodejs': EventData<NodeJSAddons>;
