@@ -1,4 +1,5 @@
 import { Json } from '../../../utils';
+import { SentryAddons } from './sentry';
 /**
  * Parsed user agent
  */
@@ -85,6 +86,10 @@ export interface JavaScriptAddons {
      * Vue integration data
      */
     vue?: VueIntegrationAddons;
+    /**
+     * Additional data extracted from the Sentry event addons
+     */
+    sentry?: SentryAddons;
     /**
      * Console log events collected from the browser
      */

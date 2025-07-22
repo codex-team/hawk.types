@@ -3,10 +3,10 @@ import { AffectedUser } from './affectedUser';
 import { EventAddons } from './addons';
 import { Json } from '../../utils';
 /**
- * Information about event
- * That object will be send as 'payload' to the Collector
+ * Information about event (Payload of the event)
+ * That object will be sent as 'payload' from the Collector to the workers
  */
-export interface EventData<CatcherAddons extends EventAddons> {
+export interface EventData<Addons extends EventAddons> {
     /**
      * Event title
      */
@@ -23,7 +23,7 @@ export interface EventData<CatcherAddons extends EventAddons> {
     /**
      * Catcher-specific information
      */
-    addons?: CatcherAddons | string;
+    addons?: Addons;
     /**
      * Current release (aka version, revision) of an application
      */
@@ -42,41 +42,28 @@ export interface EventData<CatcherAddons extends EventAddons> {
     catcherVersion?: string;
 }
 /**
- * Event accepted and processed by Collector.
- * It sets the timestamp to the event payload.
- */
-export interface EventDataAccepted<EventAddons> extends EventData<EventAddons> {
-    /**
-     * Occurrence time
-     * Unix timestamp in seconds (example: 1567009247.576)
-     * (Set by the Collector)
-     */
-    timestamp: number;
-}
-/**
  * Event data with decoded unsafe fields
  */
-export interface DecodedEventData<EventAddons> extends EventDataAccepted<EventAddons> {
+export interface DecodedEventData<Addons extends EventAddons> extends EventData<Addons> {
     /**
-     * Decoded context
+     * Json parsed context string
      */
     context?: EventContext;
     /**
-     * Decoded addons
+     * Json parsed addons string
      */
-    addons?: EventAddons;
+    addons?: Addons;
 }
 /**
  * Event data with encoded unsafe fields
- *
  */
-export interface EncodedEventData extends EventDataAccepted<EventAddons> {
+export interface EncodedEventData extends EventData<EventAddons> {
     /**
-     * Encoded context
+     * Stringified context object
      */
     context?: string;
     /**
-     * Encoded addons
+     * Stringified addons object
      */
     addons?: string;
 }
