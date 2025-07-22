@@ -1,4 +1,4 @@
-import { EventData } from '../base/event/event';
+import { DecodedEventData, EventData } from '../base/event/event';
 import { PerformanceData } from '../base/performance/performance';
 
 import type { 
@@ -29,12 +29,12 @@ export type CatcherMessageType = ErrorsCatcherType | MetricsCatcherType;
  * Type that represents the payload of a Catcher message based on its type
  */
 export type CatcherMessagePayload<Type extends CatcherMessageType> = {
-  'errors/javascript': EventData<JavaScriptAddons>;
+  'errors/default': DecodedEventData<DefaultAddons>;
+  'errors/javascript': DecodedEventData<JavaScriptAddons>;
   'errors/php': EventData<PhpAddons>;
   'errors/nodejs': EventData<NodeJSAddons>;
   'errors/go': EventData<GoAddons>;
   'errors/python': EventData<PythonAddons>;
-  'errors/default': EventData<DefaultAddons>;
   'performance': PerformanceData;
 }[Type];
 
