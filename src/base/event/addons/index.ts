@@ -4,6 +4,7 @@ import { NodeJSAddons } from './nodejs';
 import { GoAddons } from './go';
 import { PythonAddons } from './python';
 import { DefaultAddons } from './default';
+import { SentryAddons } from './sentry';
 
 /**
  * Union Type describing all catcher-specific additional data
@@ -16,6 +17,7 @@ type EventAddons =
   | GoAddons
   | PythonAddons
   | DefaultAddons
+  | SentryAddons;
 ;
 
 export {
@@ -30,4 +32,5 @@ export {
   NodeJSAddons,
   GoAddons,
   PythonAddons,
+  SentryAddons,
 }
