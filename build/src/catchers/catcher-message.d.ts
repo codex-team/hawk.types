@@ -1,14 +1,14 @@
 import { EventData } from '../base/event/event';
 import { PerformanceData } from '../base/performance/performance';
-import type { JavaScriptAddons, PhpAddons, NodeJSAddons, GoAddons, PythonAddons } from '../base/event/addons';
+import type { JavaScriptAddons, PhpAddons, NodeJSAddons, GoAddons, PythonAddons, DefaultAddons } from '../base/event/addons';
 /**
  * Type that represents all supported Catcher message types for events
  */
-declare type ErrorsCatcherType = 'errors/javascript' | 'errors/php' | 'errors/nodejs' | 'errors/go' | 'errors/python';
+export declare type ErrorsCatcherType = 'errors/javascript' | 'errors/php' | 'errors/nodejs' | 'errors/go' | 'errors/python' | 'errors/default';
 /**
  * Type that represents all supported Catcher message types for performance
  */
-declare type MetricsCatcherType = 'performance';
+export declare type MetricsCatcherType = 'performance';
 /**
  * Union type that represents all supported Catcher message types
  */
@@ -22,6 +22,7 @@ export declare type CatcherMessagePayload<Type extends CatcherMessageType> = {
     'errors/nodejs': EventData<NodeJSAddons>;
     'errors/go': EventData<GoAddons>;
     'errors/python': EventData<PythonAddons>;
+    'errors/default': EventData<DefaultAddons>;
     'performance': PerformanceData;
 }[Type];
 /**
@@ -57,4 +58,3 @@ export declare type CatcherMessageAccepted<Type extends CatcherMessageType> = Om
      */
     timestamp: number;
 };
-export {};
