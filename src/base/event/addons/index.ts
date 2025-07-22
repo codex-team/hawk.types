@@ -18,7 +18,7 @@ type EventAddons =
   | PythonAddons
   | DefaultAddons
   | SentryAddons;
-;
+
 
 export {
   WindowData,
