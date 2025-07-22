@@ -164,84 +164,41 @@ export interface VueIntegrationAddons {
  * Additional data extracted from the Sentry event payload
  */
 export interface SentryAddons {
-  /**
-   * The main message associated with the event.
-   */
   message?: string;
-
-  /**
-   * The log entry data (if any) for the event.
-   */
-  logentry?: string;
-
-  /**
-   * The timestamp when the event occurred.
-   */
-  timestamp?: string;
-
-  /**
-   * The timestamp when the event started.
-   */
-  start_timestamp?: string;
-
-  /**
-   * The severity level of the event (e.g., "error", "warning").
-   */
-  level?: string;
-
-  /**
-   * The platform where the event occurred (e.g., "browser", "node").
-   */
+  logentry?: {
+    message?: string;
+    params?: string[];
+  };
+  level?: 'fatal' | 'error' | 'warning' | 'log' | 'info' | 'debug';
   platform?: string;
-
-  /**
-   * The name of the server where the event occurred.
-   */
+  logger?: string;
   server_name?: string;
-
-  /**
-   * The release version for the event.
-   */
-  release?: string;
-
-  /**
-   * The distribution version for the event.
-   */
   dist?: string;
-
-  /**
-   * The environment in which the event occurred (e.g., "production", "staging").
-   */
   environment?: string;
-
-  /**
-   * The request data associated with the event.
-   */
-  request?: Json;
-
-  /**
-   * The transaction ID for the event.
-   */
+  request?: {
+    url?: string;
+    method?: string;
+    data?: any;
+    query_string?: string | {
+      [key: string]: string;
+    } | Array<[string, string]>;
+    cookies?: {
+      [key: string]: string;
+    };
+    env?: {
+      [key: string]: string;
+    };
+    headers?: {
+      [key: string]: string;
+    };
+  };
   transaction?: string;
-
-  /**
-   * The modules data for the event.
-   */
-  modules?: Json;
-
-  /**
-   * A fingerprint used to group the event with others.
-   */
+  modules?: {
+    [key: string]: string;
+  };
   fingerprint?: string[];
-
-  /**
-   * Tags associated with the event.
-   */
-  tags?: Json;
-
-  /**
-   * Additional custom data associated with the event.
-   */
-  extra?: Json;
+  tags?: {
+    [key: string]: number | string | boolean | bigint | symbol | null | undefined;
+  };
+  extra?: Record<string, unknown>;
 }
-
