@@ -6,18 +6,19 @@ import type {
   PhpAddons,
   NodeJSAddons,
   GoAddons,
-  PythonAddons
+  PythonAddons,
+  DefaultAddons
 } from '../base/event/addons';
 
 /**
  * Type that represents all supported Catcher message types for events
  */
-type ErrorsCatcherType = 'errors/javascript' | 'errors/php' | 'errors/nodejs' | 'errors/go' | 'errors/python';
+export type ErrorsCatcherType = 'errors/javascript' | 'errors/php' | 'errors/nodejs' | 'errors/go' | 'errors/python' | 'errors/default';
 
 /**
  * Type that represents all supported Catcher message types for performance
  */
-type MetricsCatcherType = 'performance';
+export type MetricsCatcherType = 'performance';
 
 /**
  * Union type that represents all supported Catcher message types
@@ -33,6 +34,7 @@ export type CatcherMessagePayload<Type extends CatcherMessageType> = {
   'errors/nodejs': EventData<NodeJSAddons>;
   'errors/go': EventData<GoAddons>;
   'errors/python': EventData<PythonAddons>;
+  'errors/default': EventData<DefaultAddons>;
   'performance': PerformanceData;
 }[Type];
 
