@@ -7,13 +7,18 @@ import type {
   NodeJSAddons,
   GoAddons,
   PythonAddons,
-  DefaultAddons
+  DefaultAddons,
 } from '../base/event/addons';
 
 /**
  * Type that represents all supported Catcher message types for events
  */
-export type ErrorsCatcherType = 'errors/javascript' | 'errors/php' | 'errors/nodejs' | 'errors/go' | 'errors/python' | 'errors/default';
+export type ErrorsCatcherType = 'errors/javascript'
+  | 'errors/php'
+  | 'errors/nodejs'
+  | 'errors/go'
+  | 'errors/python'
+  | 'errors/default'
 
 /**
  * Type that represents all supported Catcher message types for performance

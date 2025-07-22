@@ -105,6 +105,11 @@ export interface JavaScriptAddons {
   vue?: VueIntegrationAddons;
 
   /**
+   * Additional data extracted from the Sentry event addons
+   */
+  sentry?: SentryAddons;
+
+  /**
    * Console log events collected from the browser
    */
   consoleOutput?: ConsoleLogEvent[];
@@ -154,3 +159,89 @@ export interface VueIntegrationAddons {
    */
   computed?: Json;
 }
+
+/**
+ * Additional data extracted from the Sentry event payload
+ */
+export interface SentryAddons {
+  /**
+   * The main message associated with the event.
+   */
+  message?: string;
+
+  /**
+   * The log entry data (if any) for the event.
+   */
+  logentry?: string;
+
+  /**
+   * The timestamp when the event occurred.
+   */
+  timestamp?: string;
+
+  /**
+   * The timestamp when the event started.
+   */
+  start_timestamp?: string;
+
+  /**
+   * The severity level of the event (e.g., "error", "warning").
+   */
+  level?: string;
+
+  /**
+   * The platform where the event occurred (e.g., "browser", "node").
+   */
+  platform?: string;
+
+  /**
+   * The name of the server where the event occurred.
+   */
+  server_name?: string;
+
+  /**
+   * The release version for the event.
+   */
+  release?: string;
+
+  /**
+   * The distribution version for the event.
+   */
+  dist?: string;
+
+  /**
+   * The environment in which the event occurred (e.g., "production", "staging").
+   */
+  environment?: string;
+
+  /**
+   * The request data associated with the event.
+   */
+  request?: Json;
+
+  /**
+   * The transaction ID for the event.
+   */
+  transaction?: string;
+
+  /**
+   * The modules data for the event.
+   */
+  modules?: Json;
+
+  /**
+   * A fingerprint used to group the event with others.
+   */
+  fingerprint?: string[];
+
+  /**
+   * Tags associated with the event.
+   */
+  tags?: Json;
+
+  /**
+   * Additional custom data associated with the event.
+   */
+  extra?: Json;
+}
+
