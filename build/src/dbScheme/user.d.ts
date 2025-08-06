@@ -1,6 +1,6 @@
-import { ObjectId } from "mongodb";
-import { UserNotificationsDBScheme } from "../../index";
-import { BankCard } from "./bankCard";
+import { ObjectId } from 'mongodb';
+import { UserNotificationsDBScheme } from '../../index';
+import { BankCard } from './bankCard';
 /**
  * Interface representing how user is stored in DB
  */
@@ -42,4 +42,29 @@ export interface UserDBScheme {
      * Saved bank cards for one-click payments
      */
     bankCards?: BankCard[];
+    /**
+     * UTM parameters from signup - Data form where user went to sign up. Used for analytics purposes
+     */
+    utm?: {
+        /**
+         * UTM source - identifies which site sent the traffic
+         */
+        source?: string;
+        /**
+         * UTM medium - identifies what type of link was used
+         */
+        medium?: string;
+        /**
+         * UTM campaign - identifies a specific product promotion or strategic campaign
+         */
+        campaign?: string;
+        /**
+         * UTM content - identifies what specifically was clicked to bring the user to the site
+         */
+        content?: string;
+        /**
+         * UTM term - identifies search terms
+         */
+        term?: string;
+    };
 }
