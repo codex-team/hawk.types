@@ -5,7 +5,7 @@
   "types": "build/index.d.ts",
   "main": "build/index.js",
   "repository": "https://github.com/codex-team/hawk.types.git",
-  "license": "MIT",
+  "license": "AGPL-3.0-only",
   "scripts": {
     "lint": "eslint src/ --ext .ts --fix",
     "build": "tsc"
