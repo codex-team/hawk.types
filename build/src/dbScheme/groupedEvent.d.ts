@@ -3,6 +3,15 @@ import { DecodedEventData, EncodedEventData, EventData } from "../base/event/eve
 import { UserDBScheme } from "./user";
 import { EventAddons } from '../base/event/addons';
 /**
+ * Event marks interface for tracking event status
+ */
+export interface EventMarks {
+    /**
+     * Whether the event is ignored
+     */
+    ignored?: boolean;
+}
+/**
  * Event data after grouper-worker transformation to store it in database
  */
 export interface GroupedEventDBScheme {
@@ -40,6 +49,10 @@ export interface GroupedEventDBScheme {
      * (created by the Collector)
      */
     timestamp: number;
+    /**
+     * Event marks for tracking status
+     */
+    marks?: EventMarks;
 }
 /**
  * Grouped event with decoded event data
