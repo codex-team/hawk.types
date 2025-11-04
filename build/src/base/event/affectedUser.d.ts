@@ -17,5 +17,5 @@ export interface AffectedUser {
     /**
      * User's public picture
      */
-    image?: string;
+    photo?: string;
 }
