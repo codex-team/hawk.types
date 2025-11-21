@@ -23,4 +23,8 @@ export interface NotificationsChannelsDBScheme {
      * Pushes through the Hawk Desktop app
      */
     desktopPush?: NotificationsChannelSettingsDBScheme;
+    /**
+     * Alerts through the Loop
+     */
+    loop?: NotificationsChannelSettingsDBScheme;
 }
