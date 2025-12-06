@@ -7,19 +7,15 @@ export type BreadcrumbLevel = 'fatal' | 'error' | 'warning' | 'info' | 'debug';
 
 /**
  * Breadcrumb type - controls categorization and UI appearance
+ * Common types suitable for both client and backend
  */
 export type BreadcrumbType =
   | 'default'
-  | 'http'
-  | 'fetch'
-  | 'xhr'
-  | 'navigation'
-  | 'ui'
-  | 'user'
-  | 'error'
-  | 'debug'
-  | 'info'
-  | 'system';
+  | 'request'    // fetch, xhr, db calls, etc
+  | 'ui'         // click, mousemove, scroll, etc
+  | 'navigation' // page open, route change, etc
+  | 'logic'      // gql resolvers, internal methods calls, etc
+  | 'error';     // errors, exceptions, etc
 
 /**
  * Single breadcrumb entry - represents an event that occurred before the error
