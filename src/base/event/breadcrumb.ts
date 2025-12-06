@@ -23,11 +23,13 @@ export type BreadcrumbType =
 export interface Breadcrumb {
   /**
    * Timestamp when the breadcrumb occurred
-   * ISO 8601 string format (e.g., "2025-12-06T12:34:56.789Z")
+   * Unix timestamp in milliseconds since epoch (e.g., 1701867896789)
    *
-   * @example "2025-12-06T12:34:56.789Z"
+   * Note: This field uses milliseconds format
+   *
+   * @example 1701867896789
    */
-  timestamp: string;
+  timestamp: number;
 
   /**
    * Type of breadcrumb - controls UI categorization
