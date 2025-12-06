@@ -5,8 +5,9 @@ import { Json } from '../../utils';
 export declare type BreadcrumbLevel = 'fatal' | 'error' | 'warning' | 'info' | 'debug';
 /**
  * Breadcrumb type - controls categorization and UI appearance
+ * Common types suitable for both client and backend
  */
-export declare type BreadcrumbType = 'default' | 'http' | 'fetch' | 'xhr' | 'navigation' | 'ui' | 'user' | 'error' | 'debug' | 'info' | 'system';
+export declare type BreadcrumbType = 'default' | 'request' | 'ui' | 'navigation' | 'logic' | 'error';
 /**
  * Single breadcrumb entry - represents an event that occurred before the error
  */
