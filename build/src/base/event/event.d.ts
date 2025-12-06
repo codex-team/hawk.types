@@ -1,6 +1,7 @@
 import { BacktraceFrame } from './backtraceFrame';
 import { AffectedUser } from './affectedUser';
 import { EventAddons } from './addons';
+import { Breadcrumb } from './breadcrumb';
 import { Json } from '../../utils';
 /**
  * Information about event (Payload of the event)
@@ -28,6 +29,10 @@ export interface EventData<Addons extends EventAddons> {
      * Current release (aka version, revision) of an application
      */
     release?: string;
+    /**
+     * Breadcrumbs - chronological trail of events before the error
+     */
+    breadcrumbs?: Breadcrumb[];
     /**
      * Current authenticated user
      */

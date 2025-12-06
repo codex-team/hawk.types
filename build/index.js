@@ -15,6 +15,7 @@ __exportStar(require("./src/base/businessOperation/businessOperation"), exports)
 __exportStar(require("./src/billing/planProlongrationPayload"), exports);
 __exportStar(require("./src/base/event/affectedUser"), exports);
 __exportStar(require("./src/base/event/backtraceFrame"), exports);
+__exportStar(require("./src/base/event/breadcrumb"), exports);
 __exportStar(require("./src/base/event/event"), exports);
 __exportStar(require("./src/base/event/sourceCodeLine"), exports);
 __exportStar(require("./src/base/event/addons"), exports);
