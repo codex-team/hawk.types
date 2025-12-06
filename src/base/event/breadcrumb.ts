@@ -23,9 +23,11 @@ export type BreadcrumbType =
 export interface Breadcrumb {
   /**
    * Timestamp when the breadcrumb occurred
-   * ISO 8601 string or Unix timestamp (seconds or milliseconds)
+   * ISO 8601 string format (e.g., "2025-12-06T12:34:56.789Z")
+   *
+   * @example "2025-12-06T12:34:56.789Z"
    */
-  timestamp: string | number;
+  timestamp: string;
 
   /**
    * Type of breadcrumb - controls UI categorization
@@ -33,12 +35,27 @@ export interface Breadcrumb {
   type?: BreadcrumbType;
 
   /**
-   * Category of the event (e.g., "ui.click", "fetch", "navigation")
+   * Category of the event - more specific than type, provides detailed classification
+   *
+   * Examples:
+   * - For type='ui': "ui.click", "ui.scroll", "ui.mousemove"
+   * - For type='request': "fetch", "xhr", "db.query", "db.insert"
+   * - For type='logic': "gql.resolver", "service.method", "middleware.auth"
+   * - For type='navigation': "history.push", "history.replace", "route.change"
+   *
+   * @example "ui.click"
+   * @example "fetch"
+   * @example "gql.resolver"
    */
   category?: string;
 
   /**
    * Human-readable message describing the event
+   *
+   * @example "GET /api/profile 200"
+   * @example "Click on button#submit"
+   * @example "Navigated to /dashboard"
+   * @example "User logged in"
    */
   message?: string;
 
