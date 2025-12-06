@@ -1,4 +1,5 @@
 import { JavaScriptAddons, WindowData, VueIntegrationAddons, BeautifiedUserAgent, ConsoleLogEvent } from './javascript';
+import { Breadcrumb, BreadcrumbLevel, BreadcrumbType } from '../breadcrumb';
 import { PhpAddons } from './php';
 import { NodeJSAddons } from './nodejs';
 import { GoAddons } from './go';
@@ -25,6 +26,9 @@ export {
   VueIntegrationAddons,
   BeautifiedUserAgent,
   ConsoleLogEvent,
+  Breadcrumb,
+  BreadcrumbLevel,
+  BreadcrumbType,
   EventAddons,
   DefaultAddons,
   JavaScriptAddons,
