@@ -1,0 +1,68 @@
+name: Check NPM token
+
+on:
+  pull_request:
+    branches:
+      - master
+  push:
+    branches:
+      - master
+  workflow_dispatch: {}
+
+jobs:
+  check-token:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Use Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+          registry-url: 'https://registry.npmjs.org/'
+
+      - name: Ensure NPM_TOKEN is set
+        env:
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+        run: |
+          if [ -z "${NPM_TOKEN}" ]; then
+            echo "ERROR: secrets.NPM_TOKEN is not set. Add an npm automation token to Repository settings → Secrets → Actions as NPM_TOKEN." >&2
+            exit 1
+          fi
+          echo "NPM_TOKEN present (hidden)."
+
+      - name: Configure npm auth
+        env:
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+        run: |
+          # write npm token to ~/.npmrc for authenticated registry access
+          echo "//registry.npmjs.org/:_authToken=${NPM_TOKEN}" > ~/.npmrc
+          echo "Wrote ~/.npmrc"
+
+      - name: Verify npm authentication
+        run: |
+          set -o pipefail
+          if ! npm whoami 2>&1 | tee /tmp/npm-whoami.log; then
+            echo "\nERROR: npm whoami failed. Possible causes:" >&2
+            echo " - NPM_TOKEN is invalid or revoked" >&2
+            echo " - Token user does not have publish access to @hawk.so scope" >&2
+            echo " - Organization requires 2FA or specific automation token" >&2
+            echo "\nTo debug locally, run:" >&2
+            echo "  echo \"//registry.npmjs.org/:_authToken=YOUR_TOKEN\" > ~/.npmrc" >&2
+            echo "  npm whoami" >&2
+            echo "\nSee https://docs.npmjs.com/ for token and organization settings." >&2
+            echo "\nLast npm whoami output:" >&2
+            sed -n '1,200p' /tmp/npm-whoami.log >&2 || true
+            exit 1
+          else
+            echo "npm whoami succeeded - token is valid."
+          fi
+
+      - name: 'Optional: Check package visibility'
+        run: |
+          # check if package metadata is available (non-fatal)
+          if npm view @hawk.so/types version >/dev/null 2>&1; then
+            echo "Package @hawk.so/types exists on registry.";
+          else
+            echo "Note: package @hawk.so/types not found or private. This may be ok for first-time publish.";
+          fi
