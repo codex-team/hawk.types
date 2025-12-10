@@ -72,6 +72,11 @@ export interface WorkspaceDBScheme {
     isBlocked?: boolean;
 
     /**
+     * Date when workspace was blocked
+     */
+    blockedDate?: Date;
+
+    /**
      * List of last dates for notifications
      * Used to reduce frequency of some system messages
      */
