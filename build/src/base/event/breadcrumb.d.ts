@@ -1,4 +1,4 @@
-import { Json } from '../../utils';
+import type { Json } from '../../utils/index.ts';
 /**
  * Breadcrumb severity level
  */
@@ -17,7 +17,6 @@ export interface Breadcrumb {
      * Unix timestamp in milliseconds since epoch (e.g., 1701867896789)
      *
      * Note: This field uses milliseconds format
-     *
      * @example 1701867896789
      */
     timestamp: number;
@@ -33,7 +32,6 @@ export interface Breadcrumb {
      * - For type='request': "fetch", "xhr", "db.query", "db.insert"
      * - For type='logic': "gql.resolver", "service.method", "middleware.auth"
      * - For type='navigation': "history.push", "history.replace", "route.change"
-     *
      * @example "ui.click"
      * @example "fetch"
      * @example "gql.resolver"
@@ -41,7 +39,6 @@ export interface Breadcrumb {
     category?: string;
     /**
      * Human-readable message describing the event
-     *
      * @example "GET /api/profile 200"
      * @example "Click on button#submit"
      * @example "Navigated to /dashboard"
