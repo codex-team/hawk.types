@@ -1,4 +1,4 @@
-
+/* eslint-disable jsdoc/require-jsdoc */
 /**
  * Additional data extracted from the Sentry event payload
  */
@@ -17,6 +17,7 @@ export interface SentryAddons {
   request?: {
     url?: string;
     method?: string;
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     data?: any;
     query_string?: string | {
       [key: string]: string;
@@ -41,3 +42,4 @@ export interface SentryAddons {
   };
   extra?: Record<string, unknown>;
 }
+/* eslint-enable jsdoc/require-jsdoc */

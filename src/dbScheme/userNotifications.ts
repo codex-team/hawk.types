@@ -1,16 +1,16 @@
-import { NotificationsChannelsDBScheme, UserNotificationType } from "../../index";
+import type { NotificationsChannelsDBScheme, UserNotificationType } from '../../index.ts';
 
 /**
  * This structure represents how user notifications are stored at the DB (in 'users' collection)
  */
 export interface UserNotificationsDBScheme {
-    /**
-     * Channels with their settings
-     */
-    channels: NotificationsChannelsDBScheme;
+  /**
+   * Channels with their settings
+   */
+  channels: NotificationsChannelsDBScheme;
 
-    /**
-     * Types of notifications to receive
-     */
-    whatToReceive: {[key in UserNotificationType]: boolean};
+  /**
+   * Types of notifications to receive
+   */
+  whatToReceive: { [key in UserNotificationType]: boolean };
 }

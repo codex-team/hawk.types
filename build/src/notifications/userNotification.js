@@ -18,4 +18,4 @@ var UserNotificationType;
      * Only important messages from Hawk team
      */
     UserNotificationType["SystemMessages"] = "SystemMessages";
-})(UserNotificationType = exports.UserNotificationType || (exports.UserNotificationType = {}));
+})(UserNotificationType || (exports.UserNotificationType = UserNotificationType = {}));

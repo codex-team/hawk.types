@@ -1,4 +1,4 @@
-import { ObjectId } from "mongodb";
+import type { ObjectId } from 'bson';
 /**
  * Represents confirmed member info in DB
  */
@@ -32,4 +32,4 @@ export interface PendingMemberDBScheme {
 /**
  * Represents full structure of team collection documents
  */
-export declare type MemberDBScheme = ConfirmedMemberDBScheme | PendingMemberDBScheme;
+export type MemberDBScheme = ConfirmedMemberDBScheme | PendingMemberDBScheme;

@@ -1,6 +1,6 @@
-import { ObjectId } from 'mongodb';
-import { ProjectNotificationsRuleDBScheme } from '../../index';
-import { ProjectEventGroupingPatternsDBScheme } from '../../index';
+import type { ObjectId } from 'bson';
+import type { ProjectNotificationsRuleDBScheme } from '../../index.ts';
+import type { ProjectEventGroupingPatternsDBScheme } from '../../index.ts';
 /**
  * Structure represents a Project in DataBase
  */
@@ -11,7 +11,6 @@ export interface ProjectDBScheme {
     _id: ObjectId;
     /**
      * Unique integration id, that's used as collector domain url for sending events
-     *
      * @example `wss://${integrationId}.k1.hawk.so/ws`
      */
     integrationId: string;

@@ -1,5 +1,5 @@
-import { ReceiveTypes } from "../../index";
-import { NotificationsChannelsDBScheme } from "../dbScheme/notificationsChannels";
+import type { ReceiveTypes } from '../../index.ts';
+import type { NotificationsChannelsDBScheme } from '../dbScheme/notificationsChannels.ts';
 /**
  * Payload for creating new notification rule
  */

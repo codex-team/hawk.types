@@ -3,13 +3,13 @@
  * Used in event.payload.backtrace[].sourceCode
  */
 export interface SourceCodeLine {
-    /**
-     * Line number
-     */
-    line: number;
+  /**
+   * Line number
+   */
+  line: number;
 
-    /**
-     * Line content
-     */
-    content: string;
+  /**
+   * Line content
+   */
+  content: string;
 }

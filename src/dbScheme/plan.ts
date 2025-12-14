@@ -1,42 +1,42 @@
-import { ObjectId } from "mongodb";
+import type { ObjectId } from 'bson';
 
 /**
  * Plan representation in DataBase
  */
 export interface PlanDBScheme {
-    /**
-     * Plan's id
-     */
-    _id: ObjectId;
+  /**
+   * Plan's id
+   */
+  _id: ObjectId;
 
-    /**
-     * Plan's name
-     */
-    name: string;
+  /**
+   * Plan's name
+   */
+  name: string;
 
-    /**
-     * Monthly charge for plan in currencry specified in `monthlyChargeCurrency`
-     */
-    monthlyCharge: number;
+  /**
+   * Monthly charge for plan in currencry specified in `monthlyChargeCurrency`
+   */
+  monthlyCharge: number;
 
-    /**
-     * Currency of `monthlyCharge`
-     */
-    monthlyChargeCurrency: string;
+  /**
+   * Currency of `monthlyCharge`
+   */
+  monthlyChargeCurrency: string;
 
-    /**
-     * Maximum amount of events available for plan
-     */
-    eventsLimit: number;
+  /**
+   * Maximum amount of events available for plan
+   */
+  eventsLimit: number;
 
-    /**
-     * Is this plan used by default?
-     */
-    isDefault: boolean;
+  /**
+   * Is this plan used by default?
+   */
+  isDefault: boolean;
 
-    /**
-     * Special plans to be selected manually
-     * No one cannot be switched to this plan by api
-     */
-    isHidden?: boolean;
+  /**
+   * Special plans to be selected manually
+   * No one cannot be switched to this plan by api
+   */
+  isHidden?: boolean;
 }

@@ -1,10 +1,10 @@
-import { JavaScriptAddons, WindowData, VueIntegrationAddons, BeautifiedUserAgent, ConsoleLogEvent } from './javascript';
-import { PhpAddons } from './php';
-import { NodeJSAddons } from './nodejs';
-import { GoAddons } from './go';
-import { PythonAddons } from './python';
-import { DefaultAddons } from './default';
-import { SentryAddons } from './sentry';
+import type { JavaScriptAddons, WindowData, VueIntegrationAddons, BeautifiedUserAgent, ConsoleLogEvent } from './javascript.ts';
+import type { PhpAddons } from './php.ts';
+import type { NodeJSAddons } from './nodejs.ts';
+import type { GoAddons } from './go.ts';
+import type { PythonAddons } from './python.ts';
+import type { DefaultAddons } from './default.ts';
+import type { SentryAddons } from './sentry.ts';
 
 /**
  * Union Type describing all catcher-specific additional data
@@ -16,11 +16,10 @@ type EventAddons =
   | NodeJSAddons
   | GoAddons
   | PythonAddons
-  | DefaultAddons
+
   | SentryAddons;
 
-
-export {
+export type {
   WindowData,
   VueIntegrationAddons,
   BeautifiedUserAgent,
@@ -32,5 +31,5 @@ export {
   NodeJSAddons,
   GoAddons,
   PythonAddons,
-  SentryAddons,
-}
+  SentryAddons
+};

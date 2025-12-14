@@ -1,4 +1,4 @@
-import { NotificationsChannelSettingsDBScheme } from "../../index";
+import type { NotificationsChannelSettingsDBScheme } from '../../index.ts';
 /**
  * Available channels
  */

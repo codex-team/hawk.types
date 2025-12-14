@@ -1,4 +1,4 @@
-import { ObjectID, Timestamp } from 'mongodb';
+import type { ObjectId, Timestamp } from 'bson';
 
 /**
  * Source map with parsed file names, stored in the release
@@ -6,14 +6,12 @@ import { ObjectID, Timestamp } from 'mongodb';
 export interface SourceMapDataExtended {
   /**
    * Name of source-map file
-   *
    * @example main.min.js.map
    */
   mapFileName: string;
 
   /**
    * Bundle or chunk name
-   *
    * @example main.min.js
    */
   originFileName: string;
@@ -27,19 +25,18 @@ export interface SourceMapDataExtended {
   /**
    * When file will be saved to GridFS, there will be its id instead of 'content'
    */
-  _id?: ObjectID;
+  _id?: ObjectId;
 }
 
 /**
  * Object represents a file structure stored in Mongo GridFS
- *
  * @see https://github.com/mongodb/specifications/blob/master/source/gridfs/gridfs-spec.rst#definitions
  */
 export interface SourceMapFileChunk {
   /**
    * Unique id of a file chunk
    */
-  _id: ObjectID;
+  _id: ObjectId;
 
   /**
    * Chunk size in bytes
@@ -53,7 +50,6 @@ export interface SourceMapFileChunk {
 
   /**
    * Uploading date  stored as a BSON datetime value 'Timestamp'.
-   *
    * @example 2020-02-18T14:51:40.400Z
    */
   uploadDate: Timestamp;

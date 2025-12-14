@@ -1,7 +1,7 @@
 /**
  * Represents simple JSON-like document
  */
-export type Json = {[key: string]: JsonNode};
+export type Json = { [key: string]: JsonNode };
 
 /**
  * Represents possible field values in Dict

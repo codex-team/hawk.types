@@ -14,4 +14,4 @@ var ReceiveTypes;
      * Only first occurrence
      */
     ReceiveTypes["ONLY_NEW"] = "ONLY_NEW";
-})(ReceiveTypes = exports.ReceiveTypes || (exports.ReceiveTypes = {}));
+})(ReceiveTypes || (exports.ReceiveTypes = ReceiveTypes = {}));

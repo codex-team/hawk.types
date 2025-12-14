@@ -1,6 +1,6 @@
-import { ObjectId } from "mongodb";
-import { ReceiveTypes } from "../../index";
-import { NotificationsChannelsDBScheme } from "./notificationsChannels";
+import type { ObjectId } from 'bson';
+import type { ReceiveTypes } from '../../index.ts';
+import type { NotificationsChannelsDBScheme } from './notificationsChannels.ts';
 /**
  * This structure represents a single rule of notifications settings
  */

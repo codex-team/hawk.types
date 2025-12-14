@@ -1,84 +1,84 @@
-import { ObjectId } from "mongodb";
+import type { ObjectId } from 'bson';
 
 /**
  * Workspace representation in DataBase
  */
 export interface WorkspaceDBScheme {
-    /**
-     * Workspace's id
-     */
-    _id: ObjectId;
+  /**
+   * Workspace's id
+   */
+  _id: ObjectId;
 
-    /**
-     * Workspace's name
-     */
-    name: string;
+  /**
+   * Workspace's name
+   */
+  name: string;
 
-    /**
-     * Workspace's invite hash
-     */
-    inviteHash: string;
+  /**
+   * Workspace's invite hash
+   */
+  inviteHash: string;
 
-    /**
-     * Workspace account uuid in accounting microservice
-     */
-    accountId: string;
+  /**
+   * Workspace account uuid in accounting microservice
+   */
+  accountId: string;
 
-    /**
-     * Workspace's description
-     */
-    description?: string;
+  /**
+   * Workspace's description
+   */
+  description?: string;
 
-    /**
-     * Workspace's image URL
-     */
-    image?: string;
+  /**
+   * Workspace's image URL
+   */
+  image?: string;
 
-    /**
-     * Id of the Workspace's plan
-     */
-    tariffPlanId: ObjectId;
+  /**
+   * Id of the Workspace's plan
+   */
+  tariffPlanId: ObjectId;
 
-    /**
-     * Workspace balance
-     */
-    balance: number;
+  /**
+   * Workspace balance
+   */
+  balance: number;
 
-    /**
-     * Date when workspace was charged last time
-     */
-    lastChargeDate: Date;
+  /**
+   * Date when workspace was charged last time
+   */
+  lastChargeDate: Date;
 
-    /**
-     * Date when subscription will be expired
-     * Used for pre-paid plans for several months
-     */
-    paidUntil?: Date;
+  /**
+   * Date when subscription will be expired
+   * Used for pre-paid plans for several months
+   */
+  paidUntil?: Date;
 
-    /**
-     * Total number of errors since the last charge date
-     */
-    billingPeriodEventsCount: number;
+  /**
+   * Total number of errors since the last charge date
+   */
+  billingPeriodEventsCount: number;
 
-    /**
-     * ID of subscription if it subscribed
-     * Returns from CloudPayments
-     */
-    subscriptionId?: string;
+  /**
+   * ID of subscription if it subscribed
+   * Returns from CloudPayments
+   */
+  subscriptionId?: string;
 
-    /**
-     * Is workspace blocked for catching new events
-     */
-    isBlocked?: boolean;
+  /**
+   * Is workspace blocked for catching new events
+   */
+  isBlocked?: boolean;
 
-    /**
-     * Date when workspace was blocked
-     */
-    blockedDate?: Date;
+  /**
+   * Date when workspace was blocked
+   */
+  blockedDate?: Date;
 
-    /**
-     * List of last dates for notifications
-     * Used to reduce frequency of some system messages
-     */
-    lastNotificationDate?: {[key: string]: Date};
+  /**
+   * List of last dates for notifications
+   * Used to reduce frequency of some system messages
+   */
+  lastNotificationDate?: { [key: string]: Date };
 }

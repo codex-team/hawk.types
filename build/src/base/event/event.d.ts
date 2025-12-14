@@ -1,8 +1,7 @@
-import { BacktraceFrame } from './backtraceFrame';
-import { AffectedUser } from './affectedUser';
-import { EventAddons } from './addons';
-import { Breadcrumb } from './breadcrumb';
-import { Json } from '../../utils';
+import type { BacktraceFrame } from './backtraceFrame.ts';
+import type { AffectedUser } from './affectedUser.ts';
+import type { EventAddons } from './addons/index.ts';
+import type { Json } from '../../utils/index.ts';
 /**
  * Information about event (Payload of the event)
  * That object will be sent as 'payload' from the Collector to the workers
@@ -29,10 +28,6 @@ export interface EventData<Addons extends EventAddons> {
      * Current release (aka version, revision) of an application
      */
     release?: string;
-    /**
-     * Breadcrumbs - chronological trail of events before the error
-     */
-    breadcrumbs?: Breadcrumb[];
     /**
      * Current authenticated user
      */
@@ -75,4 +70,4 @@ export interface EncodedEventData extends EventData<EventAddons> {
 /**
  * Context is any additional data sent by developer
  */
-export declare type EventContext = Json;
+export type EventContext = Json;

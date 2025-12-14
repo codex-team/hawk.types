@@ -1,6 +1,6 @@
-import { ObjectId } from 'mongodb';
-import { UserNotificationsDBScheme } from '../../index';
-import { BankCard } from './bankCard';
+import type { ObjectId } from 'bson';
+import type { UserNotificationsDBScheme } from '../../index.ts';
+import type { BankCard } from './bankCard.ts';
 
 /**
  * Interface representing how user is stored in DB

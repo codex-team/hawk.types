@@ -1,4 +1,4 @@
-import { Json } from '../../../utils';
+import type { Json } from '../../../utils/index.ts';
 /**
  * This interface represents data that can be additionally collected by PHP Catcher
  */
