@@ -1,4 +1,4 @@
-import { SourceCodeLine } from "./sourceCodeLine";
+import type { SourceCodeLine } from './sourceCodeLine.ts';
 /**
  * Single item of backtrace
  */

@@ -1,29 +1,50 @@
-import { DecodedEventData, EventData } from '../base/event/event';
-import { PerformanceData } from '../base/performance/performance';
-import type { JavaScriptAddons, PhpAddons, NodeJSAddons, GoAddons, PythonAddons, DefaultAddons } from '../base/event/addons';
+import type { DecodedEventData, EventData } from '../base/event/event.ts';
+import type { PerformanceData } from '../base/performance/performance.ts';
+import type { JavaScriptAddons, PhpAddons, NodeJSAddons, GoAddons, PythonAddons, DefaultAddons } from '../base/event/addons/index.ts';
 /**
  * Type that represents all supported Catcher message types for events
  */
-export declare type ErrorsCatcherType = 'errors/javascript' | 'errors/php' | 'errors/nodejs' | 'errors/go' | 'errors/python' | 'errors/default';
+export type ErrorsCatcherType = 'errors/javascript' | 'errors/php' | 'errors/nodejs' | 'errors/go' | 'errors/python' | 'errors/default';
 /**
  * Type that represents all supported Catcher message types for performance
  */
-export declare type MetricsCatcherType = 'performance';
+export type MetricsCatcherType = 'performance';
 /**
  * Union type that represents all supported Catcher message types
  */
-export declare type CatcherMessageType = ErrorsCatcherType | MetricsCatcherType;
+export type CatcherMessageType = ErrorsCatcherType | MetricsCatcherType;
 /**
  * Type that represents the payload of a Catcher message based on its type
  */
-export declare type CatcherMessagePayload<Type extends CatcherMessageType> = {
+export type CatcherMessagePayload<Type extends CatcherMessageType> = {
+    /**
+     * Addons that can be added to all errors except those which have a separate workers
+     */
     'errors/default': DecodedEventData<DefaultAddons>;
+    /**
+     * Added by JavaScript SDK
+     */
     'errors/javascript': DecodedEventData<JavaScriptAddons>;
+    /**
+     * Added by PHP SDK
+     */
     'errors/php': EventData<PhpAddons>;
+    /**
+     * Added by Node.js SDK
+     */
     'errors/nodejs': EventData<NodeJSAddons>;
+    /**
+     * Added by Go SDK
+     */
     'errors/go': EventData<GoAddons>;
+    /**
+     * Added by Python SDK
+     */
     'errors/python': EventData<PythonAddons>;
-    'performance': PerformanceData;
+    /**
+     * Performance monitoring data
+     */
+    performance: PerformanceData;
 }[Type];
 /**
  * Interface that represents a message sent by a Catcher
@@ -47,7 +68,7 @@ export interface CatcherMessage<Type extends CatcherMessageType> {
  * Type that represents a Catcher message accepted by the collector
  * It omits the token field and adds projectId and timestamp
  */
-export declare type CatcherMessageAccepted<Type extends CatcherMessageType> = Omit<CatcherMessage<Type>, 'token'> & {
+export type CatcherMessageAccepted<Type extends CatcherMessageType> = Omit<CatcherMessage<Type>, 'token'> & {
     /**
      * Id of the project that sent the message
      */

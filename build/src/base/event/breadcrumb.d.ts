@@ -2,12 +2,12 @@ import { Json } from '../../utils';
 /**
  * Breadcrumb severity level
  */
-export declare type BreadcrumbLevel = 'fatal' | 'error' | 'warning' | 'info' | 'debug';
+export type BreadcrumbLevel = 'fatal' | 'error' | 'warning' | 'info' | 'debug';
 /**
  * Breadcrumb type - controls categorization and UI appearance
  * Common types suitable for both client and backend
  */
-export declare type BreadcrumbType = 'default' | 'request' | 'ui' | 'navigation' | 'logic' | 'error';
+export type BreadcrumbType = 'default' | 'request' | 'ui' | 'navigation' | 'logic' | 'error';
 /**
  * Single breadcrumb entry - represents an event that occurred before the error
  */

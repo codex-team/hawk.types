@@ -1,7 +1,7 @@
 /**
  * Encoded integration token format
  */
-export declare type EncodedIntegrationToken = string;
+export type EncodedIntegrationToken = string;
 /**
  * Fields in decoded integration token
  */

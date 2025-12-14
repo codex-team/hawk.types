@@ -1,37 +1,37 @@
-import { ReceiveTypes } from "../../index";
-import { NotificationsChannelsDBScheme } from "../dbScheme/notificationsChannels";
+import type { ReceiveTypes } from '../../index.ts';
+import type { NotificationsChannelsDBScheme } from '../dbScheme/notificationsChannels.ts';
 
 /**
  * Payload for creating new notification rule
  */
 export interface CreateProjectNotificationsRulePayload {
-    /**
-     * Allows to disable rule without removing
-     */
-    isEnabled: true;
+  /**
+   * Allows to disable rule without removing
+   */
+  isEnabled: true;
 
-    /**
-     * Receive type: 'ALL'  or 'ONLY_NEW'
-     */
-    whatToReceive: ReceiveTypes;
+  /**
+   * Receive type: 'ALL'  or 'ONLY_NEW'
+   */
+  whatToReceive: ReceiveTypes;
 
-    /**
-     * Only those which contains passed words
-     */
-    including: string[];
+  /**
+   * Only those which contains passed words
+   */
+  including: string[];
 
-    /**
-     * Skip those which contains passed words
-     */
-    excluding: string[];
+  /**
+   * Skip those which contains passed words
+   */
+  excluding: string[];
 
-    /**
-     * Creator of the rule
-     */
-    uidAdded: string;
+  /**
+   * Creator of the rule
+   */
+  uidAdded: string;
 
-    /**
-     * Available channels to receive
-     */
-    channels: NotificationsChannelsDBScheme;
+  /**
+   * Available channels to receive
+   */
+  channels: NotificationsChannelsDBScheme;
 }

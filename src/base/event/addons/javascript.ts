@@ -1,5 +1,5 @@
-import { Json } from '../../../utils';
-import { SentryAddons } from './sentry';
+import type { Json } from '../../../utils/index.ts';
+import type { SentryAddons } from './sentry.ts';
 
 /**
  * Parsed user agent

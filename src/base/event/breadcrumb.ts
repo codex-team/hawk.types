@@ -1,4 +1,4 @@
-import { Json } from '../../utils';
+import type { Json } from '../../utils/index.ts';
 
 /**
  * Breadcrumb severity level
@@ -11,11 +11,11 @@ export type BreadcrumbLevel = 'fatal' | 'error' | 'warning' | 'info' | 'debug';
  */
 export type BreadcrumbType =
   | 'default'
-  | 'request'    // fetch, xhr, db calls, etc
-  | 'ui'         // click, mousemove, scroll, etc
+  | 'request' // fetch, xhr, db calls, etc
+  | 'ui' // click, mousemove, scroll, etc
   | 'navigation' // page open, route change, etc
-  | 'logic'      // gql resolvers, internal methods calls, etc
-  | 'error';     // errors, exceptions, etc
+  | 'logic' // gql resolvers, internal methods calls, etc
+  | 'error'; // errors, exceptions, etc
 
 /**
  * Single breadcrumb entry - represents an event that occurred before the error
@@ -26,7 +26,6 @@ export interface Breadcrumb {
    * Unix timestamp in milliseconds since epoch (e.g., 1701867896789)
    *
    * Note: This field uses milliseconds format
-   *
    * @example 1701867896789
    */
   timestamp: number;
@@ -44,7 +43,6 @@ export interface Breadcrumb {
    * - For type='request': "fetch", "xhr", "db.query", "db.insert"
    * - For type='logic': "gql.resolver", "service.method", "middleware.auth"
    * - For type='navigation': "history.push", "history.replace", "route.change"
-   *
    * @example "ui.click"
    * @example "fetch"
    * @example "gql.resolver"
@@ -53,7 +51,6 @@ export interface Breadcrumb {
 
   /**
    * Human-readable message describing the event
-   *
    * @example "GET /api/profile 200"
    * @example "Click on button#submit"
    * @example "Navigated to /dashboard"
@@ -71,4 +68,3 @@ export interface Breadcrumb {
    */
   data?: Record<string, Json>;
 }
-

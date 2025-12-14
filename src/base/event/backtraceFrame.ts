@@ -1,36 +1,36 @@
-import { SourceCodeLine } from "./sourceCodeLine";
+import type { SourceCodeLine } from './sourceCodeLine.ts';
 
 /**
  * Single item of backtrace
  */
 export interface BacktraceFrame {
-    /**
-     * File
-     */
-    file: string;
+  /**
+   * File
+   */
+  file: string;
 
-    /**
-     * Line number
-     */
-    line: number;
+  /**
+   * Line number
+   */
+  line: number;
 
-    /**
-     * Column number
-     */
-    column?: number;
+  /**
+   * Column number
+   */
+  column?: number;
 
-    /**
-     * Sibling source code lines: some above and some below
-     */
-    sourceCode?: SourceCodeLine[];
+  /**
+   * Sibling source code lines: some above and some below
+   */
+  sourceCode?: SourceCodeLine[];
 
-    /**
-     * Function name extracted from current stack frame
-     */
-    function?: string;
+  /**
+   * Function name extracted from current stack frame
+   */
+  function?: string;
 
-    /**
-     * Function arguments extracted from current stack frame
-     */
-    arguments?: string[];
+  /**
+   * Function arguments extracted from current stack frame
+   */
+  arguments?: string[];
 }

@@ -1,7 +1,7 @@
-import { ObjectId } from "mongodb";
-import { DecodedEventData, EncodedEventData, EventData } from "../base/event/event";
-import { UserDBScheme } from "./user";
-import { EventAddons } from '../base/event/addons';
+import type { ObjectId } from 'bson';
+import type { DecodedEventData, EncodedEventData, EventData } from '../base/event/event.ts';
+import type { UserDBScheme } from './user.ts';
+import type { EventAddons } from '../base/event/addons/index.ts';
 /**
  * Event marks interface for tracking event status
  */
@@ -55,14 +55,20 @@ export interface GroupedEventDBScheme {
     marks?: EventMarks;
 }
 /**
- * Grouped event with decoded event data
+ * Event where 'context' and 'addons' are decoded from json strings to objects
  */
 export interface DecodedGroupedEvent extends GroupedEventDBScheme {
+    /**
+     * Event data where 'context' and 'addons' are objects
+     */
     payload: DecodedEventData<EventAddons>;
 }
 /**
- * Grouped event with encoded event data
+ * In database we store 'context' and 'addons' as json strings to avoind mongo keys conflict
  */
 export interface EncodedGroupedEvent extends GroupedEventDBScheme {
+    /**
+     * Event data where 'context' and 'addons' are json strings
+     */
     payload: EncodedEventData;
 }

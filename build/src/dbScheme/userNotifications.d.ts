@@ -1,4 +1,4 @@
-import { NotificationsChannelsDBScheme, UserNotificationType } from "../../index";
+import type { NotificationsChannelsDBScheme, UserNotificationType } from '../../index.ts';
 /**
  * This structure represents how user notifications are stored at the DB (in 'users' collection)
  */

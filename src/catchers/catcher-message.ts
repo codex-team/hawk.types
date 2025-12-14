@@ -1,14 +1,14 @@
-import { DecodedEventData, EventData } from '../base/event/event';
-import { PerformanceData } from '../base/performance/performance';
+import type { DecodedEventData, EventData } from '../base/event/event.ts';
+import type { PerformanceData } from '../base/performance/performance.ts';
 
-import type { 
-  JavaScriptAddons, 
+import type {
+  JavaScriptAddons,
   PhpAddons,
   NodeJSAddons,
   GoAddons,
   PythonAddons,
-  DefaultAddons,
-} from '../base/event/addons';
+  DefaultAddons
+} from '../base/event/addons/index.ts';
 
 /**
  * Type that represents all supported Catcher message types for events
@@ -18,7 +18,7 @@ export type ErrorsCatcherType = 'errors/javascript'
   | 'errors/nodejs'
   | 'errors/go'
   | 'errors/python'
-  | 'errors/default'
+  | 'errors/default';
 
 /**
  * Type that represents all supported Catcher message types for performance
@@ -34,13 +34,34 @@ export type CatcherMessageType = ErrorsCatcherType | MetricsCatcherType;
  * Type that represents the payload of a Catcher message based on its type
  */
 export type CatcherMessagePayload<Type extends CatcherMessageType> = {
+  /**
+   * Addons that can be added to all errors except those which have a separate workers
+   */
   'errors/default': DecodedEventData<DefaultAddons>;
+  /**
+   * Added by JavaScript SDK
+   */
   'errors/javascript': DecodedEventData<JavaScriptAddons>;
+  /**
+   * Added by PHP SDK
+   */
   'errors/php': EventData<PhpAddons>;
+  /**
+   * Added by Node.js SDK
+   */
   'errors/nodejs': EventData<NodeJSAddons>;
+  /**
+   * Added by Go SDK
+   */
   'errors/go': EventData<GoAddons>;
+  /**
+   * Added by Python SDK
+   */
   'errors/python': EventData<PythonAddons>;
-  'performance': PerformanceData;
+  /**
+   * Performance monitoring data
+   */
+  performance: PerformanceData;
 }[Type];
 
 /**

@@ -1,4 +1,4 @@
-import { ObjectId } from 'mongodb';
+import type { ObjectId } from 'bson';
 
 /**
  * Business operations statuses
@@ -7,17 +7,17 @@ export enum BusinessOperationStatus {
   /**
    * Business operation is pending
    */
-  Pending='PENDING',
+  Pending = 'PENDING',
 
   /**
    * Business operation is confirmed
    */
-  Confirmed='CONFIRMED',
+  Confirmed = 'CONFIRMED',
 
   /**
    * Business operation is rejected
    */
-  Rejected='REJECTED'
+  Rejected = 'REJECTED'
 }
 
 /**
@@ -34,13 +34,13 @@ export enum BusinessOperationType {
    */
   DepositByUser = 'DEPOSIT_BY_USER',
   /**
- * Charge minimal amount of money to link a card for further recurrent payments
- */
+   * Charge minimal amount of money to link a card for further recurrent payments
+   */
   CardLinkCharge = 'CARD_LINK_CHARGE',
   /**
    * Refund the money that were charged to link a card
    */
-  CardLinkRefund = 'CARD_LINK_REFUND',
+  CardLinkRefund = 'CARD_LINK_REFUND'
 }
 
 /**
@@ -100,7 +100,7 @@ export interface PayloadOfWorkspacePlanPurchase {
   /**
    * Id of the workspace tariff plan
    */
-  tariffPlanId: ObjectId
+  tariffPlanId: ObjectId;
 }
 
 /**
