@@ -8,7 +8,6 @@
 export interface SamlAttributeMapping {
   /**
    * Attribute name for email in SAML Assertion
-   *
    * @example "http://schemas.xmlsoap.org/ws/2005/05/identity/claims/emailaddress"
    * to get email from XML like this:
    *  <Attribute Name="http://schemas.xmlsoap.org/ws/2005/05/identity/claims/emailaddress">
@@ -87,4 +86,3 @@ export interface WorkspaceSsoConfig {
    */
   saml: SamlConfig;
 }
-
