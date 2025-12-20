@@ -1,4 +1,5 @@
 import type { ObjectId } from 'bson';
+import type { WorkspaceSsoConfig } from './sso.ts';
 /**
  * Workspace representation in DataBase
  */
@@ -68,4 +69,8 @@ export interface WorkspaceDBScheme {
     lastNotificationDate?: {
         [key: string]: Date;
     };
+    /**
+     * SSO configuration (optional, only for workspaces with SSO enabled)
+     */
+    sso?: WorkspaceSsoConfig;
 }

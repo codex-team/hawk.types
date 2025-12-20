@@ -67,4 +67,24 @@ export interface UserDBScheme {
          */
         term?: string;
     };
+    /**
+     * External identities for SSO (keyed by workspaceId)
+     */
+    identities?: {
+        [workspaceId: string]: {
+            /**
+             * SAML-mode params
+             */
+            saml: {
+                /**
+                 * NameID value from IdP (stable identifier)
+                 */
+                id: string;
+                /**
+                 * Email at the time of linking (for audit)
+                 */
+                email: string;
+            };
+        };
+    };
 }
