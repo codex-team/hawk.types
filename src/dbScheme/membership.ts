@@ -39,3 +39,14 @@ export interface PendingMemberDBScheme {
  * Represents full structure of team collection documents
  */
 export type MemberDBScheme = ConfirmedMemberDBScheme | PendingMemberDBScheme;
+
+/**
+ * User workspace membership info stored in user document
+ * Record of workspace IDs to membership data
+ */
+export type MembershipDBScheme = Record<string, {
+  /**
+   * Whether the user's membership is pending confirmation
+   */
+  isPending?: boolean;
+}>;
