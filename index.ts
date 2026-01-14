@@ -1,6 +1,6 @@
 export type * from './src/auth/tokensPair';
 
-export type * from './src/base/businessOperation/businessOperation';
+export * from './src/base/businessOperation/businessOperation';
 
 export type * from './src/billing/planProlongrationPayload';
 
@@ -33,9 +33,9 @@ export type * from './src/dbScheme/sso';
 export type * from './src/dbScheme/projectEventGroupingPattern';
 
 export type * from './src/notifications/createProjectNotifications';
-export type * from './src/notifications/receiveTypes';
+export * from './src/notifications/receiveTypes';
 export type * from './src/notifications/updateProjectNotifications';
-export type * from './src/notifications/userNotification';
+export * from './src/notifications/userNotification';
 
 export type * from './src/catchers/catcher-message';
 
