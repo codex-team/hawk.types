@@ -1,6 +1,8 @@
 import type { ObjectId } from 'bson';
 import type { UserNotificationsDBScheme } from '../../index.ts';
 import type { BankCard } from './bankCard.ts';
+import type { MembershipDBScheme } from './membership.ts';
+import type { UserProjectsLastVisitDBScheme } from './userProjectsLastVisit.ts';
 /**
  * Interface representing how user is stored in DB
  */
@@ -30,6 +32,11 @@ export interface UserDBScheme {
      */
     githubId?: string;
     /**
+     * User's workspaces membership
+     * Record of workspace IDs to membership data
+     */
+    workspaces?: MembershipDBScheme;
+    /**
      * User's original password (this field appears only after registration).
      * Using to send password to user after registration
      */
@@ -38,6 +45,10 @@ export interface UserDBScheme {
      * User notifications settings
      */
     notifications?: UserNotificationsDBScheme;
+    /**
+     * User's last visit timestamps for projects
+     */
+    projectsLastVisit?: UserProjectsLastVisitDBScheme;
     /**
      * Saved bank cards for one-click payments
      */
