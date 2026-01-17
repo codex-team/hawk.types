@@ -12,6 +12,7 @@ export type * from './src/base/event/sourceCodeLine';
 export type * from './src/base/event/addons';
 
 export type * from './src/base/integrations/integrationToken';
+export type * from './src/base/project/ProjectTaskManager';
 
 export type * from './src/dbScheme/businessOperation';
 export type * from './src/dbScheme/groupedEvent';

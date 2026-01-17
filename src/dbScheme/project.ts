@@ -1,6 +1,7 @@
 import type { ObjectId } from 'bson';
 import type { ProjectNotificationsRuleDBScheme } from '../../index.ts';
 import type { ProjectEventGroupingPatternsDBScheme } from '../../index.ts';
+import type { ProjectTaskManagerConfig } from '../base/project/ProjectTaskManager.ts';
 
 /**
  * Structure represents a Project in DataBase
@@ -56,4 +57,9 @@ export interface ProjectDBScheme {
    * Patterns for manual event grouping
    */
   eventGroupingPatterns: ProjectEventGroupingPatternsDBScheme[];
+
+  /**
+   * Task Manager configuration
+   */
+  taskManager?: ProjectTaskManagerConfig;
 }
