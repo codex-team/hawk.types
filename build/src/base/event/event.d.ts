@@ -2,6 +2,7 @@ import type { BacktraceFrame } from './backtraceFrame.ts';
 import type { AffectedUser } from './affectedUser.ts';
 import type { EventAddons } from './addons/index.ts';
 import type { Json } from '../../utils/index.ts';
+import type { Breadcrumb } from './breadcrumb.ts';
 /**
  * Information about event (Payload of the event)
  * That object will be sent as 'payload' from the Collector to the workers
@@ -20,6 +21,10 @@ export interface EventData<Addons extends EventAddons> {
      * From the latest call to the earliest
      */
     backtrace?: BacktraceFrame[];
+    /**
+     * Breadcrumbs - events that occurred before the error
+     */
+    breadcrumbs?: Breadcrumb[];
     /**
      * Catcher-specific information
      */
