@@ -1,4 +1,4 @@
-import type { Json } from '../../utils/index.ts';
+import type { JsonNode } from '../../utils/index.ts';
 
 /**
  * Breadcrumb severity level
@@ -66,5 +66,5 @@ export interface Breadcrumb {
   /**
    * Arbitrary key-value data associated with the breadcrumb
    */
-  data?: Record<string, Json>;
+  data?: Record<string, JsonNode>;
 }
