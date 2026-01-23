@@ -2,6 +2,7 @@ import type { ObjectId } from 'bson';
 import type { DecodedEventData, EncodedEventData, EventData } from '../base/event/event.ts';
 import type { UserDBScheme } from './user.ts';
 import type { EventAddons } from '../base/event/addons/index.ts';
+import type { TaskManagerItem } from '../base/event/taskManagerItem.ts';
 /**
  * Event marks interface for tracking event status
  */
@@ -53,6 +54,10 @@ export interface GroupedEventDBScheme {
      * Event marks for tracking status
      */
     marks?: EventMarks;
+    /**
+     * Task Manager item linked to this event (e.g., GitHub Issue)
+     */
+    taskManagerItem?: TaskManagerItem;
 }
 /**
  * Event where 'context' and 'addons' are decoded from json strings to objects
