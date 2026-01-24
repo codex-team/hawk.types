@@ -17,6 +17,7 @@ export default [
       'object-curly-spacing': ['error', 'always'],
       '@typescript-eslint/no-empty-interface': 'off',
       '@typescript-eslint/no-empty-object-type': ['error', { allowInterfaces: 'always' }],
+      '@typescript-eslint/consistent-type-exports': 'off',
       '@typescript-eslint/naming-convention': [
         'error',
         {
