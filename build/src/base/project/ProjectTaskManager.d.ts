@@ -81,6 +81,21 @@ export interface ProjectTaskManagerConfig {
              */
             accessToken: string;
             /**
+             * Date when access token expires
+             * null if token expiration is disabled
+             */
+            accessTokenExpiresAt: Date | null;
+            /**
+             * OAuth refresh token
+             * Used to obtain new access tokens when they expire
+             */
+            refreshToken: string;
+            /**
+             * Date when refresh token expires
+             * null if refresh token expiration is disabled
+             */
+            refreshTokenExpiresAt: Date | null;
+            /**
              * Date when token was created/saved
              */
             tokenCreatedAt: Date;
