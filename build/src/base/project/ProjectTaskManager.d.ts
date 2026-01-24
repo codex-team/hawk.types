@@ -59,5 +59,43 @@ export interface ProjectTaskManagerConfig {
          * Repository full name (owner/repo)
          */
         repoFullName: string;
+        /**
+         * Delegated user OAuth token for user-to-server authentication
+         * Used for creating issues and assigning Copilot on behalf of the user
+         */
+        delegatedUser?: {
+            /**
+             * Hawk user ID who authorized the GitHub App
+             */
+            hawkUserId: string;
+            /**
+             * GitHub user ID
+             */
+            githubUserId: number;
+            /**
+             * GitHub username/login
+             */
+            githubLogin: string;
+            /**
+             * OAuth access token (user-to-server token)
+             */
+            accessToken: string;
+            /**
+             * Date when token was created/saved
+             */
+            tokenCreatedAt: Date;
+            /**
+             * Date when token was last successfully validated
+             * null if never validated
+             */
+            tokenLastValidatedAt: Date | null;
+            /**
+             * Token status
+             * - active: token is valid (GET /user returns 200)
+             * - revoked: token was revoked (GET /user returns 401/403) or user removed authorization
+             * - missing: token is not present in project
+             */
+            status: 'active' | 'revoked' | 'missing';
+        };
     };
 }
