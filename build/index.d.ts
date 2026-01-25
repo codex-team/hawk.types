@@ -6,6 +6,7 @@ export * from './src/base/event/backtraceFrame';
 export * from './src/base/event/breadcrumb';
 export * from './src/base/event/event';
 export * from './src/base/event/sourceCodeLine';
+export * from './src/base/event/taskManagerItem';
 export * from './src/base/event/addons';
 export * from './src/base/integrations/integrationToken';
 export * from './src/base/project/ProjectTaskManager';
