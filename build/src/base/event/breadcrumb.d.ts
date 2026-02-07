@@ -2,12 +2,12 @@ import type { JsonNode } from '../../utils/index.ts';
 /**
  * Breadcrumb severity level
  */
-export type BreadcrumbLevel = 'fatal' | 'error' | 'warning' | 'info' | 'debug';
+export type BreadcrumbLevel = 'fatal' | 'error' | 'warning' | 'info' | 'debug' | (string & {});
 /**
  * Breadcrumb type - controls categorization and UI appearance
  * Common types suitable for both client and backend
  */
-export type BreadcrumbType = 'default' | 'request' | 'ui' | 'navigation' | 'logic' | 'error';
+export type BreadcrumbType = 'default' | 'request' | 'ui' | 'navigation' | 'logic' | 'error' | (string & {});
 /**
  * Single breadcrumb entry - represents an event that occurred before the error
  */
