@@ -3,7 +3,7 @@ import type { JsonNode } from '../../utils/index.ts';
 /**
  * Breadcrumb severity level
  */
-export type BreadcrumbLevel = 'fatal' | 'error' | 'warning' | 'info' | 'debug';
+export type BreadcrumbLevel = 'fatal' | 'error' | 'warning' | 'info' | 'debug' | (string & {});
 
 /**
  * Breadcrumb type - controls categorization and UI appearance
@@ -15,7 +15,8 @@ export type BreadcrumbType =
   | 'ui' // click, mousemove, scroll, etc
   | 'navigation' // page open, route change, etc
   | 'logic' // gql resolvers, internal methods calls, etc
-  | 'error'; // errors, exceptions, etc
+  | 'error' // errors, exceptions, etc
+  | (string & {}); // allow any custom type from SDK users
 
 /**
  * Single breadcrumb entry - represents an event that occurred before the error
