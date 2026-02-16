@@ -27,4 +27,8 @@ export interface NotificationsChannelsDBScheme {
      * Alerts through the Loop
      */
     loop?: NotificationsChannelSettingsDBScheme;
+    /**
+     * Alerts through a custom Webhook URL
+     */
+    webhook?: NotificationsChannelSettingsDBScheme;
 }
