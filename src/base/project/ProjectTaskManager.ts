@@ -57,7 +57,11 @@ export interface ProjectTaskManagerConfig {
    */
   config: {
     /**
-     * GitHub App installation ID
+     * GitHub App installation ID.
+     *
+     * This is a **copy** from workspace.integrations.github.installations[].
+     * Stored here for worker optimization — allows the worker to operate
+     * per-project without additional joins/lookups to the workspaces collection.
      */
     installationId: string;
 
@@ -72,66 +76,8 @@ export interface ProjectTaskManagerConfig {
     repoFullName: string;
 
     /**
-     * Delegated user OAuth token for user-to-server authentication
-     * Used for creating issues and assigning Copilot on behalf of the user
+     * Primary programming language of the repository (as reported by GitHub)
      */
-    delegatedUser?: {
-      /**
-       * Hawk user ID who authorized the GitHub App
-       */
-      hawkUserId: string;
-
-      /**
-       * GitHub user ID
-       */
-      githubUserId: number;
-
-      /**
-       * GitHub username/login
-       */
-      githubLogin: string;
-
-      /**
-       * OAuth access token (user-to-server token)
-       */
-      accessToken: string;
-
-      /**
-       * Date when access token expires
-       * null if token expiration is disabled
-       */
-      accessTokenExpiresAt: Date | null;
-
-      /**
-       * OAuth refresh token
-       * Used to obtain new access tokens when they expire
-       */
-      refreshToken: string;
-
-      /**
-       * Date when refresh token expires
-       * null if refresh token expiration is disabled
-       */
-      refreshTokenExpiresAt: Date | null;
-
-      /**
-       * Date when token was created/saved
-       */
-      tokenCreatedAt: Date;
-
-      /**
-       * Date when token was last successfully validated
-       * null if never validated
-       */
-      tokenLastValidatedAt: Date | null;
-
-      /**
-       * Token status
-       * - active: token is valid (GET /user returns 200)
-       * - revoked: token was revoked (GET /user returns 401/403) or user removed authorization
-       * - missing: token is not present in project
-       */
-      status: 'active' | 'revoked' | 'missing';
-    };
+    repoLanguage?: string;
   };
 }

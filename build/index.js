@@ -26,6 +26,8 @@ __exportStar(require("./src/base/event/taskManagerItem"), exports);
 __exportStar(require("./src/base/event/addons"), exports);
 __exportStar(require("./src/base/integrations/integrationToken"), exports);
 __exportStar(require("./src/base/project/ProjectTaskManager"), exports);
+__exportStar(require("./src/base/workspace/GitHubIntegration"), exports);
+__exportStar(require("./src/base/user/GitHubAuthorization"), exports);
 __exportStar(require("./src/dbScheme/businessOperation"), exports);
 __exportStar(require("./src/dbScheme/groupedEvent"), exports);
 __exportStar(require("./src/dbScheme/notificationsChannels"), exports);

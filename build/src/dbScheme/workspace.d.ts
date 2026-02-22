@@ -1,5 +1,6 @@
 import type { ObjectId } from 'bson';
 import type { WorkspaceSsoConfig } from './sso.ts';
+import type { WorkspaceIntegrations } from '../base/workspace/GitHubIntegration.ts';
 /**
  * Workspace representation in DataBase
  */
@@ -73,4 +74,8 @@ export interface WorkspaceDBScheme {
      * SSO configuration (optional, only for workspaces with SSO enabled)
      */
     sso?: WorkspaceSsoConfig;
+    /**
+     * External integrations (GitHub, etc.)
+     */
+    integrations?: WorkspaceIntegrations;
 }
