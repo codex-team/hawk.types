@@ -3,6 +3,7 @@ import type { UserNotificationsDBScheme } from '../../index.ts';
 import type { BankCard } from './bankCard.ts';
 import type { MembershipDBScheme } from './membership.ts';
 import type { UserProjectsLastVisitDBScheme } from './userProjectsLastVisit.ts';
+import type { GitHubAuthorization } from '../base/user/GitHubAuthorization.ts';
 
 /**
  * Interface representing how user is stored in DB
@@ -94,6 +95,12 @@ export interface UserDBScheme {
      */
     term?: string;
   };
+
+  /**
+   * GitHub OAuth authorizations.
+   * Used for user-to-server operations (e.g. Copilot assignment).
+   */
+  githubAuthorizations?: GitHubAuthorization[];
 
   /**
    * External identities for SSO (keyed by workspaceId)

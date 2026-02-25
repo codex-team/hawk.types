@@ -17,7 +17,16 @@ jobs:
       - run: yarn
       - run: yarn lint
       - run: yarn build
-      - run: yarn publish --access=public
+      - name: Determine npm dist-tag
+        id: dist-tag
+        run: |
+          VERSION=$(node -p "require('./package.json').version")
+          if echo "$VERSION" | grep -q "\-rc\."; then
+            echo "tag=rc" >> "$GITHUB_OUTPUT"
+          else
+            echo "tag=latest" >> "$GITHUB_OUTPUT"
+          fi
+      - run: yarn publish --access=public --tag ${{ steps.dist-tag.outputs.tag }}
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
   notify:
