@@ -81,9 +81,14 @@ export interface GitHubInstallation {
   updatedAt: Date;
 
   /**
-   * Delegate user for agent actions in Worker
+   * Delegate user whose GitHub OAuth token is used by the Worker
+   * for user-to-server actions (e.g. Copilot assignment).
+   *
+   * null right after installation is saved — at that point we only have
+   * the installation_id from GitHub but haven't exchanged the OAuth code yet.
+   * Gets populated in the same /oauth callback once the code exchange succeeds.
    */
-  delegatedUser: GitHubInstallationDelegatedUser;
+  delegatedUser: GitHubInstallationDelegatedUser | null;
 }
 
 /**
