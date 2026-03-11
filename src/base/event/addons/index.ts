@@ -5,6 +5,7 @@ import type { GoAddons } from './go.ts';
 import type { PythonAddons } from './python.ts';
 import type { DefaultAddons } from './default.ts';
 import type { SentryAddons } from './sentry.ts';
+import type { PerformanceIssueAddons, LongTaskAddon, LongAnimationFrameAddon, LoAFScriptEntry, WebVitalAddon } from './performanceIssues.ts';
 
 /**
  * Union Type describing all catcher-specific additional data
@@ -31,5 +32,10 @@ export type {
   NodeJSAddons,
   GoAddons,
   PythonAddons,
-  SentryAddons
+  SentryAddons,
+  PerformanceIssueAddons,
+  LongTaskAddon,
+  LongAnimationFrameAddon,
+  LoAFScriptEntry,
+  WebVitalAddon
 };
