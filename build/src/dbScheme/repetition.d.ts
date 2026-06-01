@@ -29,6 +29,12 @@ export interface RepetitionDBScheme {
      * (created by the Collector)
      */
     timestamp: number;
+    /**
+     * Number of real client-side occurrences merged into this single repetition
+     * by Catcher-side debounce (see CatcherMessage.count).
+     * Absent or 1 — this repetition represents a single occurrence.
+     */
+    count?: number;
 }
 /**
  * Repetition with decoded event data
