@@ -1,5 +1,6 @@
 import type { ObjectId } from 'bson';
 import type { ReceiveTypes } from '../../index.ts';
+import type { IssueStatusChangeType } from '../notifications/issueStatusChangeTypes.ts';
 import type { NotificationsChannelsDBScheme } from './notificationsChannels.ts';
 /**
  * This structure represents a single rule of notifications settings
@@ -41,6 +42,10 @@ export interface ProjectNotificationsRuleDBScheme {
      * Size of period (in milliseconds) to count events to compare to rule threshold
      */
     thresholdPeriod?: number;
+    /**
+     * Issue status changes that should trigger this rule.
+     */
+    issueStatusTypes?: IssueStatusChangeType[];
     /**
      * If rule is created automatically (on project creation or conversion of old projects)
      */

@@ -49,6 +49,7 @@ __exportStar(require("./src/dbScheme/bankCard"), exports);
 __exportStar(require("./src/dbScheme/sso"), exports);
 __exportStar(require("./src/dbScheme/projectEventGroupingPattern"), exports);
 __exportStar(require("./src/notifications/createProjectNotifications"), exports);
+__exportStar(require("./src/notifications/issueStatusChangeTypes"), exports);
 __exportStar(require("./src/notifications/receiveTypes"), exports);
 __exportStar(require("./src/notifications/updateProjectNotifications"), exports);
 __exportStar(require("./src/notifications/userNotification"), exports);

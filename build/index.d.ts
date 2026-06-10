@@ -33,6 +33,7 @@ export * from './src/dbScheme/bankCard';
 export * from './src/dbScheme/sso';
 export * from './src/dbScheme/projectEventGroupingPattern';
 export * from './src/notifications/createProjectNotifications';
+export * from './src/notifications/issueStatusChangeTypes';
 export * from './src/notifications/receiveTypes';
 export * from './src/notifications/updateProjectNotifications';
 export * from './src/notifications/userNotification';

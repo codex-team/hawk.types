@@ -1,4 +1,5 @@
 import type { ReceiveTypes } from '../../index.ts';
+import type { IssueStatusChangeType } from './issueStatusChangeTypes.ts';
 import type { NotificationsChannelsDBScheme } from '../dbScheme/notificationsChannels.ts';
 /**
  * Payload for updating existing notifications rule
@@ -28,4 +29,8 @@ export interface UpdateProjectNotificationsRulePayload {
      * Available channels to receive
      */
     channels: NotificationsChannelsDBScheme;
+    /**
+     * Issue status changes that should trigger this rule.
+     */
+    issueStatusTypes?: IssueStatusChangeType[];
 }
