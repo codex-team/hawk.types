@@ -22,11 +22,6 @@ export interface PromoCodeDBScheme {
      */
     limit?: number;
     /**
-     * Date before which promo code cannot be used
-     * @example 2026-01-01T00:00:00.000Z
-     */
-    startsAt?: Date;
-    /**
      * Date after which promo code cannot be used
      * @example 2026-12-31T23:59:59.000Z
      */
@@ -45,5 +40,5 @@ export interface PromoCodeDBScheme {
      * User or system id that created promo code
      * @example 507f1f77bcf86cd799439013
      */
-    createdBy?: string;
+    createdBy: string;
 }
