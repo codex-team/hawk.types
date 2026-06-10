@@ -35,6 +35,8 @@ __exportStar(require("./src/dbScheme/notificationsChannelSettings"), exports);
 __exportStar(require("./src/dbScheme/membership"), exports);
 __exportStar(require("./src/dbScheme/userProjectsLastVisit"), exports);
 __exportStar(require("./src/dbScheme/plan"), exports);
+__exportStar(require("./src/dbScheme/promoCode"), exports);
+__exportStar(require("./src/dbScheme/promoCodeUsage"), exports);
 __exportStar(require("./src/dbScheme/project"), exports);
 __exportStar(require("./src/dbScheme/projectNotificationsRule"), exports);
 __exportStar(require("./src/dbScheme/release"), exports);

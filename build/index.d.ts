@@ -19,6 +19,8 @@ export * from './src/dbScheme/notificationsChannelSettings';
 export * from './src/dbScheme/membership';
 export * from './src/dbScheme/userProjectsLastVisit';
 export * from './src/dbScheme/plan';
+export * from './src/dbScheme/promoCode';
+export * from './src/dbScheme/promoCodeUsage';
 export * from './src/dbScheme/project';
 export * from './src/dbScheme/projectNotificationsRule';
 export * from './src/dbScheme/release';
