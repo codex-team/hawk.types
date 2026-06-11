@@ -1,5 +1,5 @@
 import type { ObjectId } from 'bson';
-import type { PromoCodeBenefitType } from './promoCode';
+import type { PromoCodeBenefitType } from './promoCode.ts';
 
 /**
  * Promo code usage representation in DataBase

@@ -1,7 +1,7 @@
 import type { ObjectId } from 'bson';
 
 /**
- * Promo code benefit type
+ * Defines what a promo code grants to the user or workspace
  */
 export type PromoCodeBenefitType =
   | 'grant_plan'
@@ -25,7 +25,7 @@ export interface GrantPlanPromoCodeBenefit {
 }
 
 /**
- * Percent discount benefit
+ * Reduces plan price by a percentage when purchasing a tariff
  */
 export interface PercentDiscountPromoCodeBenefit {
   /**
@@ -80,7 +80,7 @@ export interface AmountDiscountPromoCodeBenefit {
 }
 
 /**
- * Fixed price benefit
+ * Sets a fixed final price for selected plans when purchasing a tariff
  */
 export interface FixedPricePromoCodeBenefit {
   /**
