@@ -4,6 +4,7 @@ import type { BankCard } from './bankCard.ts';
 import type { MembershipDBScheme } from './membership.ts';
 import type { UserProjectsLastVisitDBScheme } from './userProjectsLastVisit.ts';
 import type { GitHubAuthorization } from '../base/user/GitHubAuthorization.ts';
+import type { Utm } from '../base/utm.ts';
 /**
  * Interface representing how user is stored in DB
  */
@@ -57,28 +58,7 @@ export interface UserDBScheme {
     /**
      * UTM parameters from signup - Data form where user went to sign up. Used for analytics purposes
      */
-    utm?: {
-        /**
-         * UTM source - identifies which site sent the traffic
-         */
-        source?: string;
-        /**
-         * UTM medium - identifies what type of link was used
-         */
-        medium?: string;
-        /**
-         * UTM campaign - identifies a specific product promotion or strategic campaign
-         */
-        campaign?: string;
-        /**
-         * UTM content - identifies what specifically was clicked to bring the user to the site
-         */
-        content?: string;
-        /**
-         * UTM term - identifies search terms
-         */
-        term?: string;
-    };
+    utm?: Utm;
     /**
      * GitHub OAuth authorizations.
      * Used for user-to-server operations (e.g. Copilot assignment).

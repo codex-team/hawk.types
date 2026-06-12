@@ -10,6 +10,7 @@ export * from './src/base/event/taskManagerItem';
 export * from './src/base/event/addons';
 export * from './src/base/integrations/integrationToken';
 export * from './src/base/project/ProjectTaskManager';
+export * from './src/base/utm';
 export * from './src/base/workspace/GitHubIntegration';
 export * from './src/base/user/GitHubAuthorization';
 export * from './src/dbScheme/businessOperation';
