@@ -83,6 +83,12 @@ export interface CatcherMessage<Type extends CatcherMessageType> {
    * All information about the event
    */
   payload: CatcherMessagePayload<Type>;
+
+  /**
+   * Number of identical occurrences this message represents.
+   * Computed on Catcher side to dedupe similar events caused in the same time.
+   */
+  count?: number;
 }
 
 /**
