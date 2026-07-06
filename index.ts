@@ -10,6 +10,7 @@ export * from './src/base/event/breadcrumb';
 export * from './src/base/event/event';
 export * from './src/base/event/sourceCodeLine';
 export * from './src/base/event/taskManagerItem';
+export * from './src/base/event/traceContext';
 export * from './src/base/event/addons';
 
 export * from './src/base/integrations/integrationToken';
