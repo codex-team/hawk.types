@@ -3,6 +3,7 @@ import type { AffectedUser } from './affectedUser.ts';
 import type { EventAddons } from './addons/index.ts';
 import type { Json } from '../../utils/index.ts';
 import type { Breadcrumb } from './breadcrumb.ts';
+import type { EventTrace } from './trace.ts';
 
 /**
  * Information about event (Payload of the event)
@@ -54,6 +55,11 @@ export interface EventData<Addons extends EventAddons> {
    * Catcher version
    */
   catcherVersion?: string;
+
+  /**
+   * Distributed trace metadata for linking related events within the same execution chain.
+   */
+  trace?: EventTrace;
 }
 
 /**
