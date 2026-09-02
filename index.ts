@@ -1,3 +1,5 @@
+export * from './src/ai/stream';
+
 export * from './src/auth/tokensPair';
 
 export * from './src/base/businessOperation/businessOperation';
