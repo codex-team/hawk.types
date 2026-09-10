@@ -43,6 +43,11 @@ export interface ReleaseDBScheme {
      */
     release: string;
     /**
+     * Optional sequence for new releases, assigned from 1 within a project.
+     * Legacy releases created before this feature may not have this field.
+     */
+    releaseSequence?: number;
+    /**
      * Commit data, to identify suspicious ones
      */
     commits: CommitData[];
