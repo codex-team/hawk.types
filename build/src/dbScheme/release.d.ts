@@ -43,6 +43,10 @@ export interface ReleaseDBScheme {
      */
     release: string;
     /**
+     * Whether the release was checked for resolved events
+     */
+    fixChecked?: boolean;
+    /**
      * Commit data, to identify suspicious ones
      */
     commits: CommitData[];
