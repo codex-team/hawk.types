@@ -17,6 +17,11 @@ export interface RepetitionDBScheme {
   groupHash: string;
 
   /**
+   * Release in which the repetition occurred
+   */
+  release?: string;
+
+  /**
    * @deprecated use delta instead
    * And any of EventData field with diff
    * except fields that used in groupHash

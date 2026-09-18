@@ -61,6 +61,16 @@ export interface GroupedEventDBScheme {
   timestamp: number;
 
   /**
+   * First release in which the event stopped occurring
+   */
+  resolvedInRelease?: string;
+
+  /**
+   * First release in which the resolved event occurred again
+   */
+  regressionInRelease?: string;
+
+  /**
    * Event marks for tracking status
    */
   marks?: EventMarks;
