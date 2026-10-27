@@ -1,6 +1,7 @@
 export * from './src/ai/stream';
 
 export * from './src/auth/tokensPair';
+export * from './src/auth/mcp/authorizationEndpoint';
 
 export * from './src/base/businessOperation/businessOperation';
 
