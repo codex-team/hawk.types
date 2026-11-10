@@ -1,4 +1,4 @@
-import type { ObjectId, Timestamp } from "bson";
+import type { ObjectId, Timestamp } from 'bson';
 
 /**
  * Permissions granted to token
@@ -12,45 +12,45 @@ export interface ThirdpartyDBScheme {
   /**
    * External token identifier
    */
-  _id: ObjectId,
+  _id: ObjectId;
 
   /**
    * Token owner id
    */
-  userId: string,
+  userId: string;
 
   /**
    * Unique JSON Web Token Identifier
    */
-  jti: string,
+  jti: string;
 
   /**
    * Last characters of the token, used to tell tokens apart in user settings
    */
-  preview: string,
+  preview: string;
 
   /**
    * What token can be used for
    */
-  permissions: TokenPermissions[],
+  permissions: TokenPermissions[];
 
   /**
    * Label set by user
    */
-  lable: string,
+  lable: string;
 
   /**
    * Last time token was used
    */
-  lastUsedAt: Timestamp | null,
+  lastUsedAt: Timestamp | null;
 
   /**
    * Usage count
    */
-  requestCount: number,
+  requestCount: number;
 
   /**
    * Creation date
    */
-  createdAt: Timestamp
+  createdAt: Timestamp;
 }
