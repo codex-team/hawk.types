@@ -6,9 +6,9 @@ import type { ObjectId, Timestamp } from "bson";
 export type TokenPermissions = 'read' | 'write';
 
 /**
- * Database representation of JSON Web Token issued to third-party clients
+ * Database representation of active to third-party clients
  */
-export interface JWTIdDBScheme {
+export interface ThirdpartyDBScheme {
   /**
    * External token identifier
    */
