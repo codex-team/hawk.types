@@ -16,7 +16,7 @@ var __exportStar = (this && this.__exportStar) || function(m, exports) {
 Object.defineProperty(exports, "__esModule", { value: true });
 __exportStar(require("./src/ai/stream"), exports);
 __exportStar(require("./src/auth/tokensPair"), exports);
-__exportStar(require("./src/auth/mcp/authorizationEndpoint"), exports);
+__exportStar(require("./src/auth/OAuth"), exports);
 __exportStar(require("./src/base/businessOperation/businessOperation"), exports);
 __exportStar(require("./src/billing/planProlongrationPayload"), exports);
 __exportStar(require("./src/base/event/affectedUser"), exports);
@@ -51,6 +51,7 @@ __exportStar(require("./src/dbScheme/workspace"), exports);
 __exportStar(require("./src/dbScheme/bankCard"), exports);
 __exportStar(require("./src/dbScheme/sso"), exports);
 __exportStar(require("./src/dbScheme/projectEventGroupingPattern"), exports);
+__exportStar(require("./src/dbScheme/thirdparty"), exports);
 __exportStar(require("./src/notifications/createProjectNotifications"), exports);
 __exportStar(require("./src/notifications/receiveTypes"), exports);
 __exportStar(require("./src/notifications/updateProjectNotifications"), exports);
