@@ -1,7 +1,7 @@
 export * from './src/ai/stream';
 
 export * from './src/auth/tokensPair';
-export * from './src/auth/mcp/authorizationEndpoint';
+export * from './src/auth/OAuth';
 
 export * from './src/base/businessOperation/businessOperation';
 
@@ -41,6 +41,7 @@ export * from './src/dbScheme/workspace';
 export * from './src/dbScheme/bankCard';
 export * from './src/dbScheme/sso';
 export * from './src/dbScheme/projectEventGroupingPattern';
+export * from './src/dbScheme/thirdparty';
 
 export * from './src/notifications/createProjectNotifications';
 export * from './src/notifications/receiveTypes';
