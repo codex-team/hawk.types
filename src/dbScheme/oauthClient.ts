@@ -8,7 +8,7 @@ export type TokenPermissions = 'read' | 'write';
 /**
  * Database representation of active to third-party clients
  */
-export interface ThirdpartyDBScheme {
+export interface OAuthClientDBScheme {
   /**
    * External token identifier
    */
