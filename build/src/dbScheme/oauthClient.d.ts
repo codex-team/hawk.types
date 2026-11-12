@@ -4,11 +4,11 @@ import type { ObjectId, Timestamp } from 'bson';
  */
 export type TokenPermissions = 'read' | 'write';
 /**
- * Database representation of active to third-party clients
+ * Database representation of active to oauth client
  */
 export interface OAuthClientDBScheme {
     /**
-     * External token identifier
+     * External client identifier
      */
     _id: ObjectId;
     /**
@@ -16,15 +16,15 @@ export interface OAuthClientDBScheme {
      */
     userId: string;
     /**
+     * User agent id
+     */
+    clientId: string;
+    /**
      * Unique JSON Web Token Identifier
      */
     jti: string;
     /**
-     * Last characters of the token, used to tell tokens apart in user settings
-     */
-    preview: string;
-    /**
-     * What token can be used for
+     * What client is allowed to do
      */
     permissions: TokenPermissions[];
     /**
@@ -32,7 +32,7 @@ export interface OAuthClientDBScheme {
      */
     lable: string;
     /**
-     * Last time token was used
+     * Last time the client interacted with hawk api
      */
     lastUsedAt: Timestamp | null;
     /**
