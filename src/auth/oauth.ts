@@ -1,4 +1,19 @@
 /**
+ * Possible {@link https://datatracker.ietf.org/doc/html/draft-ietf-oauth-v2-1-17#name-authorization-grant | OAuth authorization grant types}
+ */
+export declare enum OAuthGrantType {
+  /**
+   * Used to obtain an access token
+   */
+  authorizationCode = 'authorization_code',
+
+  /**
+   * Used to obtain a new access token when the current access token becomes invalid or expires
+   */
+  refreshToken = 'refresh_token'
+}
+
+/**
  * Possible {@link https://datatracker.ietf.org/doc/html/draft-ietf-oauth-v2-1-17#section-3.2.4 | OAuth error codes}
  */
 export declare enum OAuthErrorCode {
@@ -49,7 +64,7 @@ export interface OAuthRequest {
   client_id: string;
 
   /**
-   * Indicates the URL to return the user to after authorization is complete
+   * The URL to return the user to after authorization is complete
    */
   redirect_uri: string;
 
@@ -90,7 +105,7 @@ export interface OAuthRequest {
  */
 export interface OAuthResponse {
   /**
-   * Indicates the URL to return the user to after authorization is complete.
+   * The URL to return the user to after authorization is complete.
    * Populated with additional parameters
    */
   redirect_uri: string;
@@ -110,3 +125,97 @@ export interface OAuthError {
    */
   error_description?: string;
 }
+
+/**
+ * Base OAuth token requset parameters
+ */
+type OAuthTokenRequestBase = {
+  /**
+   * Client Identifier
+   */
+  client_id: string;
+
+  /**
+   * Target service or resource to which access is being requested.
+   * MUST be an absolute URI
+   */
+  resource?: string;
+};
+
+/**
+ * Parameters for an authorization code token request
+ */
+type OAuthAuthorizationTokenRequest = OAuthTokenRequestBase & {
+  /**
+   * OAuth grant type
+   */
+  grant_type: OAuthGrantType.authorizationCode;
+
+  /**
+   * The authorization code received from the authorization server
+   */
+  code: string;
+
+  /**
+   * High-entropy cryptographic random STRING
+   */
+  code_verifier: string;
+
+  /**
+   * The URL to return the user to after authorization is complete
+   * Populated with additional parameters
+   */
+  redirect_uri: string;
+};
+
+/**
+ * Parameters for a refresh token request
+ */
+type OAuthRefreshTokenRequest = OAuthTokenRequestBase & {
+  /**
+   * OAuth grant type
+   */
+  grant_type: OAuthGrantType.refreshToken;
+
+  /**
+   * JWT refresh token
+   */
+  refresh_token: string;
+};
+
+/**
+ * Union of authorization code and refresh token requests
+ */
+export type OAuthTokenRequest =
+  | OAuthAuthorizationTokenRequest
+  | OAuthRefreshTokenRequest;
+
+/**
+ * Parameters for {@link https://datatracker.ietf.org/doc/html/draft-ietf-oauth-v2-1-16#name-token-endpoint-response | Token Endpoint Response}
+ */
+export type TokenResponse = {
+  /**
+   * JWT access token
+   */
+  access_token: string;
+
+  /**
+   * JWT refresh token
+   */
+  refresh_token?: string;
+
+  /**
+   * The type of the access token issued
+   */
+  token_type: 'Bearer';
+
+  /**
+   * A JSON number that represents the lifetime in seconds of the access token
+   */
+  expires_in: number;
+
+  /**
+   * Access provided by the OAuth server
+   */
+  scope: string;
+};
