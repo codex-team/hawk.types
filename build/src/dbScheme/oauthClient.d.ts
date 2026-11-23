@@ -1,4 +1,4 @@
-import type { ObjectId, Timestamp } from 'bson';
+import type { ObjectId } from 'bson';
 /**
  * Permissions granted to token
  */
@@ -34,7 +34,7 @@ export interface OAuthClientDBScheme {
     /**
      * Last time the client interacted with hawk api
      */
-    lastUsedAt: Timestamp | null;
+    lastUsedAt: Date | null;
     /**
      * Usage count
      */
@@ -42,5 +42,5 @@ export interface OAuthClientDBScheme {
     /**
      * Creation date
      */
-    createdAt: Timestamp;
+    createdAt: Date;
 }
