@@ -1,7 +1,7 @@
 /**
  * Possible {@link https://datatracker.ietf.org/doc/html/draft-ietf-oauth-v2-1-17#name-authorization-grant | OAuth authorization grant types}
  */
-export declare enum OAuthGrantType {
+export enum OAuthGrantType {
   /**
    * Used to obtain an access token
    */
@@ -16,7 +16,7 @@ export declare enum OAuthGrantType {
 /**
  * Possible {@link https://datatracker.ietf.org/doc/html/draft-ietf-oauth-v2-1-17#section-3.2.4 | OAuth error codes}
  */
-export declare enum OAuthErrorCode {
+export enum OAuthErrorCode {
   /**
    * The request is missing a required parameter, includes an unsupported parameter value
    * (other than grant type), repeats a parameter, includes multiple credentials, utilizes

@@ -25,11 +25,6 @@ export interface OAuthClientDBScheme {
   clientId: string;
 
   /**
-   * Unique JSON Web Token Identifier
-   */
-  jti: string;
-
-  /**
    * What client is allowed to do
    */
   permissions: TokenPermissions[];
